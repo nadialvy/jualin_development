@@ -1,21 +1,91 @@
 name: jualin_flutter_3
 version: 1.0.0+1
 publish_to: none
-description: A new Flutter project.
-environment: 
+description: Jualin.
+environment:
   sdk: '>=2.18.2 <3.0.0'
 
-dependencies: 
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # SORT BY ASC
   cupertino_icons: ^1.0.2
+
+  # firebase -> keep using latest version
+  firebase_auth: ^4.1.0
+  firebase_core: ^2.1.1
+  cloud_firestore: ^4.0.3
+
+  # flutter
+  flutter_svg: ^1.1.6
+  flutter_config: ^2.0.0
+
+  # getX
   get: 4.6.5
-  flutter: 
-    sdk: flutter
+  get_storage: ^2.0.3
 
-dev_dependencies: 
+  # gredu lib
+  gredu_common: ^0.1.0
+  gredu_unleash: ^0.0.1
+
+  # adit custom lib
+  circular_profile_avatar:
+    git:
+      url: https://github.com/rgplvr/flutter-plugin-circular_profile_avatar
+      ref: master
+
+  # google
+  google_fonts: ^3.0.1
+
+  # media preview
+  # image_cropper: ^2.0.3
+  photo_view: ^0.14.0
+  share_plus: ^6.1.0
+
+  # other lib
+  dio: ^4.0.6
+  velocity_x: ^3.6.0
+  intl: ^0.17.0
+  pull_to_refresh: ^2.0.0
+  animated_splash_screen: ^1.3.0
+  image_gallery_saver: ^1.7.1
+  file_picker: ^5.2.2
+  image_picker: ^0.8.6
+  permission_handler: ^10.2.0
+  http: ^0.13.5
+  pin_code_fields: ^7.4.0
+  persistent_bottom_nav_bar: ^5.0.2
+  json_annotation: ^4.7.0
+  json_serializable: ^6.5.4
+  build_runner: ^2.3.2
+  flutter_inappwebview: ^5.7.1
+  toggle_switch: ^2.0.1
+  flutter_switch: ^0.3.2
+  image_cropper_for_web: ^1.0.2
+  image_cropper: ^3.0.0
+  # geolocator: ^9.0.2
+  # geocoding: ^2.0.5
+
+dev_dependencies:
   flutter_lints: ^2.0.0
-  flutter_test: 
+  flutter_test:
     sdk: flutter
 
-flutter: 
-  uses-material-design: true
+flutter_config:
+  path: ../
 
+flutter:
+  assets:
+    - assets/images/
+  fonts:
+    - family: PlusJakartaSans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans-ExtraBold.ttf
+        - asset: assets/fonts/PlusJakartaSans-Bold.ttf
+        - asset: assets/fonts/PlusJakartaSans-SemiBold.ttf
+        - asset: assets/fonts/PlusJakartaSans-Medium.ttf
+        - asset: assets/fonts/PlusJakartaSans-Regular.ttf
+        - asset: assets/fonts/PlusJakartaSans-Light.ttf
+
+  uses-material-design: true
