@@ -1,6 +1,11 @@
-# jualin_flutter_3
+# Jualin Development
 
-A new Flutter project.
+This project using flutter 3.3.4, GetX Ecosystem, and VelocityX
+
+Learn About Packages
+  1. Flutter
+  2. GetX
+  3. VelocityX
 
 ## Getting Started
 
