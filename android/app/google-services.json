@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "222823091418",
+    "project_id": "jualin-development",
+    "storage_bucket": "jualin-development.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222823091418:android:fb7589ad8c7ae022ba69e3",
+        "android_client_info": {
+          "package_name": "com.example.jualin_flutter_3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222823091418-2907e3ppmrb68djchs5ncd1b09q5eiig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbhxnIHmnHURDGVk-pI1LJUeVVqZbPG_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222823091418-2907e3ppmrb68djchs5ncd1b09q5eiig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
