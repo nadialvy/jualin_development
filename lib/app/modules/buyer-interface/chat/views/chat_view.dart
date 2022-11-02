@@ -13,7 +13,7 @@ class ChatView extends GetView<ChatController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ChatView'),
+        title: Text('Hello ChatView'),
         centerTitle: true,
       ),
       body: Center(
