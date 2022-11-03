@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:gredu_common/gredu_common.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 import '../../../../core/resource/color.dart';
 import '../../../../helper/_index.dart';
@@ -76,6 +75,16 @@ class ProfileView extends GetView<ProfileController> {
         label: 'Keluar',
         labelColor: colorWhite,
         backgroundColor: colorError,
+        onPressed: () => {
+          ExAlert.confirm(
+            showAsset: false,
+            title: 'Keluar Akun?',
+            message: 'Kamu dapat mengakses akunmu kembali dari halaman login.',
+            btnYesText: 'Keluar',
+            btnNoText: 'Batal',
+            onYes: () => controller.logOut(),
+          ),
+        },
       ).p24(),
     );
   }
