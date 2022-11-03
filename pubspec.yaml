@@ -64,13 +64,20 @@ dependencies:
   flutter_switch: ^0.3.2
   image_cropper_for_web: ^1.0.2
   image_cropper: ^3.0.0
-  # geolocator: ^9.0.2
-  # geocoding: ^2.0.5
+  geolocator: ^9.0.2
+  logger: ^1.1.0
+  geocoding: ^2.0.5
 
 dev_dependencies:
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: "^0.10.0"
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo_jualin.png"
 
 flutter_config:
   path: ../

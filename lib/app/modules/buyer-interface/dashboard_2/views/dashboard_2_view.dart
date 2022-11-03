@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -16,86 +17,100 @@ class Dashboard2View extends GetView<Dashboard2Controller> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: colorWhite,
-      appBar: AppBar(
-        title: VStack([
-          'Hai, Aksa!'.text.color(colorBlack).size(20).bold.make(),
-          HStack([
-            Image.asset(
-              'assets/images/ic_place.png',
-              scale: 2,
-            ),
-            5.widthBox,
-            'Jl. in aja dulu No 136'.text.color(colorBlack).maxLines(1).size(12).ellipsis.make(),
-          ])
-        ]),
-        backgroundColor: colorWhite,
-        elevation: 1,
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.notifications,
-              color: colorPrimary,
-            ),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.person,
-              color: colorPrimary,
-            ),
-            onPressed: () => controller.goToProfilePage(),
-          ),
-        ],
-      ),
-      body: SafeArea(
-        child: VStack(
-          [
-            10.heightBox,
-            buildSearchBox(),
-            19.heightBox,
-            buildTitle('Pedagang Keliling'),
-            12.heightBox,
-            buildContainer([
-              buildCard(),
-              12.heightBox,
-              buildCard(),
-              12.heightBox,
-              buildCard(),
-            ]),
-            19.heightBox,
-            buildTitle('Pedagang Kaki Lima'),
-            buildContainer([
-              buildCard(),
-              12.heightBox,
-              buildCard(),
-              12.heightBox,
-              buildCard(),
-            ]),
-            19.heightBox,
-            buildTitle('Lokasi Pedagang Keliling'),
-            16.heightBox,
-            Container(
-              height: 200,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: colorNeutral,
-                borderRadius: BorderRadius.circular(8),
+      body: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+        stream: controller.streamUser(),
+        builder: ((context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return ExUiLoading();
+          }
+          if (snapshot.hasData) {
+            Map<String, dynamic> userData = snapshot.data!.data()!;
+            return SafeArea(
+              child: VStack(
+                [
+                  HStack([
+                    VStack([
+                      'Hai, ${userData["full_name"]}'.text.color(colorBlack).size(20).bold.make(),
+                      HStack([
+                        Image.asset(
+                          'assets/images/ic_place.png',
+                          scale: 2,
+                        ),
+                        5.widthBox,
+                        userData["address"] != null
+                            ? "${userData["address"]}".text.color(colorBlack).maxLines(1).size(12).ellipsis.make()
+                            : "Anda belum mengaktifkan lokasi".text.color(colorErrorDark).maxLines(1).size(12).ellipsis.make(),
+                      ])
+                    ]),
+                    Spacer(),
+                    HStack([
+                      IconButton(
+                        icon: Icon(
+                          Icons.notifications,
+                          color: colorPrimary,
+                        ),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.person,
+                          color: colorPrimary,
+                        ),
+                        onPressed: () => controller.goToProfilePage(),
+                      ),
+                    ])
+                  ]),
+                  10.heightBox,
+                  buildSearchBox(),
+                  19.heightBox,
+                  buildTitle('Pedagang Keliling'),
+                  12.heightBox,
+                  buildContainer([
+                    buildCard(),
+                    12.heightBox,
+                    buildCard(),
+                    12.heightBox,
+                    buildCard(),
+                  ]),
+                  19.heightBox,
+                  buildTitle('Pedagang Kaki Lima'),
+                  12.heightBox,
+                  buildContainer([
+                    buildCard(),
+                    12.heightBox,
+                    buildCard(),
+                    12.heightBox,
+                    buildCard(),
+                  ]),
+                  19.heightBox,
+                  buildTitle('Lokasi Pedagang Keliling'),
+                  16.heightBox,
+                  Container(
+                    height: 200,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: colorNeutral,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  19.heightBox,
+                  buildTitle('Lapak Tersedia'),
+                  16.heightBox,
+                  HStack([
+                    buildCardLapak(),
+                    buildCardLapak(),
+                    buildCardLapak(),
+                    buildCardLapak(),
+                    buildCardLapak(),
+                  ]).scrollHorizontal(),
+                  20.heightBox
+                ],
               ),
-            ),
-            19.heightBox,
-            buildTitle('Lapak Tersedia'),
-            16.heightBox,
-            HStack([
-              buildCardLapak(),
-              buildCardLapak(),
-              buildCardLapak(),
-              buildCardLapak(),
-              buildCardLapak(),
-            ]).scrollHorizontal(),
-            20.heightBox
-          ],
-        ),
-      ).pSymmetric(h: 16).scrollVertical(),
+            ).pSymmetric(h: 16).scrollVertical();
+          }
+          return ExUiErrorOrEmpty();
+        }),
+      ),
     );
   }
 
