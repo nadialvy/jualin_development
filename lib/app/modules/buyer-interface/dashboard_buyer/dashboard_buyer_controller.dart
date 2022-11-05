@@ -21,7 +21,7 @@ class DashboardBuyerController extends GetxController {
     yield* firestore.collection("user").doc(uid).snapshots();
   }
 
-  void goToProfilePage() => Get.toNamed(Routes.PROFILE);
+  void goToProfilePage() => Get.toNamed(Routes.PROFILE_BUYER);
 
   Future<void> updatePosition(Position position, String address) async {
     String uid = auth.currentUser!.uid;
