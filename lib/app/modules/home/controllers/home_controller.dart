@@ -4,21 +4,22 @@ import 'package:gredu_common/gredu_common.dart';
 
 import '../../../core/constants/type_user.dart';
 import '../../../routes/app_pages.dart';
+
 class HomeController extends GetxController {
   final userRole = ''.obs;
   FirebaseAuth auth = FirebaseAuth.instance;
   late Rx<User?> _user;
 
-  void onBoardingAsABuyer(){
+  void onBoardingAsABuyer() {
     ExLoading.show();
     userRole.value = UserType.BUYER;
-    Get.toNamed(Routes.ON_BOARDING, arguments: {'user_role' : userRole.value});
+    Get.toNamed(Routes.ON_BOARDING, arguments: {'user_role': userRole.value});
   }
 
-  void onBoardingAsASeller(){
+  void onBoardingAsASeller() {
     ExLoading.show();
     userRole.value = UserType.SELLER;
-    Get.toNamed(Routes.ON_BOARDING, arguments: {'user_role' : userRole.value});
+    Get.toNamed(Routes.ON_BOARDING, arguments: {'user_role': userRole.value});
   }
 
   void onready() {
@@ -28,10 +29,10 @@ class HomeController extends GetxController {
     ever(_user, _initialScreen); // listening any changes all the time
   }
 
-  _initialScreen(User? user){
-    if(user == null){
+  _initialScreen(User? user) {
+    if (user == null) {
       Get.offAll(() => Get.toNamed(Routes.HOME));
-    }else {
+    } else {
       Get.offAll(() => Get.toNamed(Routes.DASHBOARD));
     }
   }

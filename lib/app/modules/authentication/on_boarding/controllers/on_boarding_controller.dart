@@ -11,11 +11,16 @@ class OnBoardingController extends GetxController {
     super.onInit();
   }
 
-  void goToLoginPage(){
-    Get.toNamed(Routes.LOGIN, arguments: {'user_role' : userRole.value});
+  void goToHome() async {
+    await Get.delete<OnBoardingController>();
+    Get.toNamed(Routes.HOME);
   }
 
-  void goToRegisterPage(){
-    Get.toNamed(Routes.REGISTER, arguments: {'user_role' : userRole.value});
+  void goToLoginPage() {
+    Get.toNamed(Routes.LOGIN, arguments: {'user_role': userRole.value});
+  }
+
+  void goToRegisterPage() {
+    Get.toNamed(Routes.REGISTER, arguments: {'user_role': userRole.value});
   }
 }

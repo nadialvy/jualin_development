@@ -19,12 +19,12 @@ class OnBoardingView extends GetView<OnBoardingController> {
         elevation: 0,
         shadowColor: Colors.transparent,
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_outlined,
-              color: colorBlack,
-            ),
-            onPressed: () => Get.to(const HomeView())),
+        leading: const Icon(
+          Icons.arrow_back_outlined,
+          color: colorBlack,
+        ).onTap(() {
+          controller.goToHome();
+        }),
       ),
       body: SizedBox(
         width: double.infinity,
