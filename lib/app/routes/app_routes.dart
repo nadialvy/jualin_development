@@ -22,7 +22,7 @@ abstract class Routes {
   static const CHAT = _Paths.CHAT_BUYER;
   static const SETTING = _Paths.SETTING_BUYER;
   static const DASHBOARD_BUYER = _Paths.DASHBOARD_BUYER;
-  static const PROFILE = _Paths.PROFILE_BUYER;
+  static const PROFILE_BUYER = _Paths.PROFILE_BUYER;
   static const NOTIFICATION = _Paths.NOTIFICATION_BUYER;
   static const HELP = _Paths.HELP_BUYER;
 

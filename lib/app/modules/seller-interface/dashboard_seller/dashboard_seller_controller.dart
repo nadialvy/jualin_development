@@ -1,20 +1,36 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:jualin_flutter_3/app/helper/snackbar_helper.dart';
+import 'package:logger/logger.dart';
+
+import '../../../routes/app_pages.dart';
 
 class DashboardSellerController extends GetxController {
-  //TODO: Implement DashboardSellerController
+  FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  final tfSearch = TextEditingController();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  Stream<DocumentSnapshot<Map<String, dynamic>>> streamUser() async* {
+    String uid = auth.currentUser!.uid;
+
+    yield* firestore.collection("user").doc(uid).snapshots();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  // void goToProfilePage() => Get.toNamed(Routes.PROFILE_SELLER);
 
-  @override
-  void onClose() {}
-  void increment() => count.value++;
+  Future<void> updatePosition(Position position, String address) async {
+    String uid = auth.currentUser!.uid;
+
+    try {
+      await firestore.collection("user").doc(uid).update({
+        "position": {"lat": position.latitude, "long": position.longitude},
+        "address": address
+      });
+    } catch (e) {
+      SnackbarHelper.danger(e.toString());
+    }
+  }
 }
