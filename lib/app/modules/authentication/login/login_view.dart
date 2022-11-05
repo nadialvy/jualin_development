@@ -34,7 +34,6 @@ class LoginView extends GetView<LoginController> {
       ),
       body: SafeArea(
         child: VStack([
-          32.heightBox,
           controller.userRole.value == UserType.BUYER
               ? 'Masuk ke Akunmu Sebagai Pembeli'.text.extraBold.headline6(context).make()
               : 'Masuk ke Akunmu Sebagai Pedagang'.text.extraBold.headline6(context).make(),
@@ -58,7 +57,7 @@ class LoginView extends GetView<LoginController> {
         isLabelBold: true,
         leftIcon: SvgPicture.asset('assets/images/ic_google.svg'),
         width: double.infinity,
-        onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan, kamu bisa mencoba fitur lain'),
+        onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
       ).pSymmetric(v: 6),
       if (Platform.isIOS)
         ExButtonOutline(
@@ -66,7 +65,7 @@ class LoginView extends GetView<LoginController> {
           labelColor: colorNeutral,
           leftIcon: SvgPicture.asset('assets/images/ic_apple.svg'),
           width: double.infinity,
-          onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan, kamu bisa mencoba fitur lain'),
+          onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
         ).pSymmetric(v: 6),
     ]);
   }
@@ -112,7 +111,7 @@ class LoginView extends GetView<LoginController> {
       16.heightBox,
       TextButton(
         child: 'Lupa PIN'.text.extraBold.color(colorPrimary).makeCentered(),
-        onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan, kamu bisa menggunakan fitur lain'),
+        onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
       ),
       8.heightBox,
       Text.rich(
