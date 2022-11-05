@@ -6,26 +6,36 @@ import '../modules/authentication/on_boarding/on_boarding_binding.dart';
 import '../modules/authentication/on_boarding/on_boarding_view.dart';
 import '../modules/authentication/register/register_binding.dart';
 import '../modules/authentication/register/register_view.dart';
-import '../modules/buyer-interface/chat/chat_binding.dart';
-import '../modules/buyer-interface/chat/chat_view.dart';
-import '../modules/buyer-interface/dashboard/dashboard_binding.dart';
-import '../modules/buyer-interface/dashboard/dashboard_view.dart';
-import '../modules/buyer-interface/dashboard_2/dashboard_2_binding.dart';
-import '../modules/buyer-interface/dashboard_2/dashboard_2_view.dart';
-import '../modules/buyer-interface/help/help_binding.dart';
-import '../modules/buyer-interface/help/help_view.dart';
-import '../modules/buyer-interface/notification/notification_binding.dart';
-import '../modules/buyer-interface/notification/notification_view.dart';
-import '../modules/buyer-interface/order/order_binding.dart';
-import '../modules/buyer-interface/order/order_view.dart';
-import '../modules/buyer-interface/profile/profile_binding.dart';
-import '../modules/buyer-interface/profile/profile_view.dart';
-import '../modules/buyer-interface/setting/setting_binding.dart';
-import '../modules/buyer-interface/setting/setting_view.dart';
+import '../modules/buyer-interface/chat_buyer/chat_buyer_binding.dart';
+import '../modules/buyer-interface/chat_buyer/chat_buyer_view.dart';
+import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_binding.dart';
+import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_view.dart';
+import '../modules/buyer-interface/help_buyer/help_buyer_binding.dart';
+import '../modules/buyer-interface/help_buyer/help_buyer_view.dart';
+import '../modules/buyer-interface/notification_buyer/notification_buyer_binding.dart';
+import '../modules/buyer-interface/notification_buyer/notification_view.dart';
+import '../modules/buyer-interface/order_buyer/order_buyer_binding.dart';
+import '../modules/buyer-interface/order_buyer/order_buyer_view.dart';
+import '../modules/buyer-interface/persistent_tab_buyer/persistent_tab_buyer_binding.dart';
+import '../modules/buyer-interface/persistent_tab_buyer/persistent_tab_buyer_view.dart';
+import '../modules/buyer-interface/profile_buyer/profile_buyer_binding.dart';
+import '../modules/buyer-interface/profile_buyer/profile_buyer_view.dart';
+import '../modules/buyer-interface/setting_buyer/setting_buyer_binding.dart';
+import '../modules/buyer-interface/setting_buyer/setting_buyer_view.dart';
 import '../modules/home/home_binding.dart';
 import '../modules/home/home_view.dart';
 import '../modules/media_preview/image_preview/image_preview_binding.dart';
 import '../modules/media_preview/image_preview/image_preview_view.dart';
+import '../modules/seller-interface/chat_seller/chat_seller_binding.dart';
+import '../modules/seller-interface/chat_seller/chat_seller_view.dart';
+import '../modules/seller-interface/dashboard_seller/dashboard_seller_binding.dart';
+import '../modules/seller-interface/dashboard_seller/dashboard_seller_view.dart';
+import '../modules/seller-interface/order_seller/order_seller_binding.dart';
+import '../modules/seller-interface/order_seller/order_seller_view.dart';
+import '../modules/seller-interface/persistent_tab_seller/persistent_tab_seller_binding.dart';
+import '../modules/seller-interface/persistent_tab_seller/persistent_tab_seller_view.dart';
+import '../modules/seller-interface/setting_seller/setting_seller_binding.dart';
+import '../modules/seller-interface/setting_seller/setting_seller_view.dart';
 
 // ignore_for_file: constant_identifier_names, prefer_const_constructors
 
@@ -65,44 +75,69 @@ class AppPages {
       binding: RegisterBinding(),
     ),
     GetPage(
-      name: _Paths.DASHBOARD,
-      page: () => DashboardView(),
-      binding: DashboardBinding(),
+      name: _Paths.PERSISTENT_TAB_BUYER,
+      page: () => PersistentTabBuyerView(),
+      binding: PersistentTabBuyerBinding(),
     ),
     GetPage(
-      name: _Paths.ORDER,
-      page: () => OrderView(),
-      binding: OrderBinding(),
+      name: _Paths.ORDER_BUYER,
+      page: () => OrderBuyerView(),
+      binding: OrderBuyerBinding(),
     ),
     GetPage(
-      name: _Paths.CHAT,
-      page: () => ChatView(),
-      binding: ChatBinding(),
+      name: _Paths.CHAT_BUYER,
+      page: () => ChatBuyerView(),
+      binding: ChatBuyerBinding(),
     ),
     GetPage(
-      name: _Paths.SETTING,
-      page: () => SettingView(),
-      binding: SettingBinding(),
+      name: _Paths.SETTING_BUYER,
+      page: () => SettingBuyerView(),
+      binding: SettingBuyerBinding(),
     ),
     GetPage(
-      name: _Paths.DASHBOARD_2,
-      page: () => Dashboard2View(),
-      binding: Dashboard2Binding(),
+      name: _Paths.DASHBOARD_BUYER,
+      page: () => DashboardBuyerView(),
+      binding: DashboardBuyerBinding(),
     ),
     GetPage(
-      name: _Paths.PROFILE,
-      page: () => ProfileView(),
-      binding: ProfileBinding(),
+      name: _Paths.PROFILE_BUYER,
+      page: () => ProfileBuyerView(),
+      binding: ProfileBuyerBinding(),
     ),
     GetPage(
-      name: _Paths.NOTIFICATION,
-      page: () => NotificationView(),
-      binding: NotificationBinding(),
+      name: _Paths.NOTIFICATION_BUYER,
+      page: () => NotificationBuyerView(),
+      binding: NotificationBuyerBinding(),
     ),
     GetPage(
-      name: _Paths.HELP,
-      page: () => HelpView(),
-      binding: HelpBinding(),
+      name: _Paths.HELP_BUYER,
+      page: () => HelpBuyerView(),
+      binding: HelpBuyerBinding(),
+    ),
+    GetPage(
+      name: _Paths.DASHBOARD_SELLER,
+      page: () => DashboardSellerView(),
+      binding: DashboardSellerBinding(),
+    ),
+    GetPage(
+      name: _Paths.PERSISTENT_TAB_SELLER,
+      page: () => PersistentTabSellerView(),
+      binding: PersistentTabSellerBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER_SELLER,
+      page: () => OrderSellerView(),
+      binding: OrderSellerBinding(),
+    ),
+    GetPage(
+      name: _Paths.CHAT_SELLER,
+      page: () => ChatSellerView(),
+      binding: ChatSellerBinding(),
+    ),
+    GetPage(
+      name: _Paths.SETTING_SELLER,
+      page: () => SettingSellerView(),
+      binding: SettingSellerBinding(),
     ),
   ];
 }

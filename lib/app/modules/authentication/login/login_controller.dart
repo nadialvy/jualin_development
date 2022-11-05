@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:gredu_common/gredu_common.dart';
 
+import '../../../core/constants/type_user.dart';
 import '../../../helper/snackbar_helper.dart';
 import '../../../routes/app_pages.dart';
 
@@ -39,8 +40,10 @@ class LoginController extends GetxController {
 
         if (userCredential.user != null) {
           ExLoading.show();
-          if (userCredential.user!.emailVerified == true) {
-            Get.offAllNamed(Routes.DASHBOARD);
+          if (userCredential.user!.emailVerified == true && userRole.value == UserType.BUYER) {
+            Get.offAllNamed(Routes.PERSISTENT_TAB_BUYER);
+          } else if (userCredential.user!.emailVerified == true && userRole.value == UserType.SELLER) {
+            Get.offAllNamed(Routes.PERSISTENT_TAB_SELLER);
           } else {
             ExLoading.show();
             ExAlert.confirm(

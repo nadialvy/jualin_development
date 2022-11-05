@@ -15,14 +15,23 @@ abstract class Routes {
   static const ON_BOARDING = _Paths.ON_BOARDING;
   static const LOGIN = _Paths.LOGIN;
   static const REGISTER = _Paths.REGISTER;
-  static const DASHBOARD = _Paths.DASHBOARD;
-  static const ORDER = _Paths.ORDER;
-  static const CHAT = _Paths.CHAT;
-  static const SETTING = _Paths.SETTING;
-  static const DASHBOARD_2 = _Paths.DASHBOARD_2;
-  static const PROFILE = _Paths.PROFILE;
-  static const NOTIFICATION = _Paths.NOTIFICATION;
-  static const HELP = _Paths.HELP;
+
+  ///BUYER SECTION
+  static const PERSISTENT_TAB_BUYER = _Paths.PERSISTENT_TAB_BUYER;
+  static const ORDER = _Paths.ORDER_BUYER;
+  static const CHAT = _Paths.CHAT_BUYER;
+  static const SETTING = _Paths.SETTING_BUYER;
+  static const DASHBOARD_BUYER = _Paths.DASHBOARD_BUYER;
+  static const PROFILE = _Paths.PROFILE_BUYER;
+  static const NOTIFICATION = _Paths.NOTIFICATION_BUYER;
+  static const HELP = _Paths.HELP_BUYER;
+
+  ///SELLER SECTION
+  static const DASHBOARD_SELLER = _Paths.DASHBOARD_SELLER;
+  static const PERSISTENT_TAB_SELLER = _Paths.PERSISTENT_TAB_SELLER;
+  static const ORDER_SELLER = _Paths.ORDER_SELLER;
+  static const CHAT_SELLER = _Paths.CHAT_SELLER;
+  static const SETTING_SELLER = _Paths.SETTING_SELLER;
 }
 
 abstract class _Paths {
@@ -31,12 +40,21 @@ abstract class _Paths {
   static const ON_BOARDING = '/on-boarding';
   static const LOGIN = '/login';
   static const REGISTER = '/register';
-  static const DASHBOARD = '/dashboard';
-  static const ORDER = '/order';
-  static const CHAT = '/chat';
-  static const SETTING = '/setting';
-  static const DASHBOARD_2 = '/dashboard-2';
-  static const PROFILE = '/profile';
-  static const NOTIFICATION = '/notification';
-  static const HELP = '/help';
+
+  ///BUYER SECTION
+  static const PERSISTENT_TAB_BUYER = '/persistent-tab-buyer';
+  static const ORDER_BUYER = '/order-buyer';
+  static const CHAT_BUYER = '/chat-buyer';
+  static const SETTING_BUYER = '/setting-buyer';
+  static const DASHBOARD_BUYER = '/dashboard-buyer';
+  static const PROFILE_BUYER = '/profile-buyer';
+  static const NOTIFICATION_BUYER = '/notification-buyer';
+  static const HELP_BUYER = '/help-buyer';
+
+  ///SELLER SECTION
+  static const DASHBOARD_SELLER = '/dashboard-seller';
+  static const PERSISTENT_TAB_SELLER = '/persistent-tab-seller';
+  static const ORDER_SELLER = '/order-seller';
+  static const CHAT_SELLER = '/chat-seller';
+  static const SETTING_SELLER = '/setting-seller';
 }
