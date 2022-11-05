@@ -23,7 +23,7 @@ const MENU_SETTING_SELLER = 3;
 class PersistentTabSellerController extends GetxController {
   final bottomNavigationController = PersistentTabController();
   final pageList = [
-    DashboardSellerView(),
+    const DashboardSellerView(),
     OrderSellerView(),
     ChatSellerView(),
     SettingSellerView(),
@@ -41,7 +41,7 @@ class PersistentTabSellerController extends GetxController {
 
       List<Placemark> placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
       String address = "${placemarks[0].name} - ${placemarks[0].subLocality}";
-      // dashboardSellerController.updatePosition(position, address);
+      dashboardSellerController.updatePosition(position, address);
 
       await Get.delete<OrderSellerController>();
       await Get.delete<ChatSellerController>();

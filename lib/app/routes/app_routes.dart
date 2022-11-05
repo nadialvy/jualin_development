@@ -32,6 +32,7 @@ abstract class Routes {
   static const ORDER_SELLER = _Paths.ORDER_SELLER;
   static const CHAT_SELLER = _Paths.CHAT_SELLER;
   static const SETTING_SELLER = _Paths.SETTING_SELLER;
+  static const PROFILE_SELLER = _Paths.PROFILE_SELLER;
 }
 
 abstract class _Paths {
@@ -57,4 +58,5 @@ abstract class _Paths {
   static const ORDER_SELLER = '/order-seller';
   static const CHAT_SELLER = '/chat-seller';
   static const SETTING_SELLER = '/setting-seller';
+  static const PROFILE_SELLER = '/profile-seller';
 }
