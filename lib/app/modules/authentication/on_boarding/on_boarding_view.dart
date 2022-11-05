@@ -6,7 +6,6 @@ import 'package:gredu_common/gredu_common.dart';
 import '../../../core/constants/type_user.dart';
 import '../../../core/resource/color.dart';
 import '../../../widgets/index.dart';
-import '../../home/home_view.dart';
 import 'on_boarding_controller.dart';
 
 class OnBoardingView extends GetView<OnBoardingController> {

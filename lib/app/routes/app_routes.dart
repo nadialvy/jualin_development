@@ -23,8 +23,8 @@ abstract class Routes {
   static const SETTING = _Paths.SETTING_BUYER;
   static const DASHBOARD_BUYER = _Paths.DASHBOARD_BUYER;
   static const PROFILE_BUYER = _Paths.PROFILE_BUYER;
-  static const NOTIFICATION = _Paths.NOTIFICATION_BUYER;
-  static const HELP = _Paths.HELP_BUYER;
+  static const NOTIFICATION_BUYER = _Paths.NOTIFICATION_BUYER;
+  static const HELP_BUYER = _Paths.HELP_BUYER;
 
   ///SELLER SECTION
   static const DASHBOARD_SELLER = _Paths.DASHBOARD_SELLER;
@@ -33,6 +33,8 @@ abstract class Routes {
   static const CHAT_SELLER = _Paths.CHAT_SELLER;
   static const SETTING_SELLER = _Paths.SETTING_SELLER;
   static const PROFILE_SELLER = _Paths.PROFILE_SELLER;
+  static const NOTIFICATION_SELLER =_Paths.NOTIFICATION_SELLER;
+  static const HELP_SELLER = _Paths.HELP_SELLER;
 }
 
 abstract class _Paths {
@@ -59,4 +61,6 @@ abstract class _Paths {
   static const CHAT_SELLER = '/chat-seller';
   static const SETTING_SELLER = '/setting-seller';
   static const PROFILE_SELLER = '/profile-seller';
+  static const NOTIFICATION_SELLER = '/notification-seller';
+  static const HELP_SELLER = '/help-seller';
 }
