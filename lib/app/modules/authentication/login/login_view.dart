@@ -8,6 +8,7 @@ import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
 import 'package:gredu_common/gredu_common.dart';
+import 'package:jualin_flutter_3/app/core/constants/type_user.dart';
 
 import '../../../core/resource/color.dart';
 import '../../../helper/_index.dart';
@@ -34,7 +35,9 @@ class LoginView extends GetView<LoginController> {
       body: SafeArea(
         child: VStack([
           32.heightBox,
-          'Masuk ke Akunmu'.text.extraBold.headline6(context).make(),
+          controller.userRole.value == UserType.BUYER
+              ? 'Masuk ke Akunmu Sebagai Pembeli'.text.extraBold.headline6(context).make()
+              : 'Masuk ke Akunmu Sebagai Pedagang'.text.extraBold.headline6(context).make(),
           12.heightBox,
           'Pilih cara termudah untuk mengakses akun, baik secara manual maupun dengan akun Google  atau, Daftar Sekarang jika belum memiliki akun!'.text.color(colorNeutral).make(),
           12.heightBox,
@@ -104,12 +107,7 @@ class LoginView extends GetView<LoginController> {
       ),
       16.heightBox,
       Obx(
-        () => ExButtonDefault(
-          label: 'Masuk',
-          width: double.infinity,
-          isEnable: controller.isAllFormValid.value,
-          onPressed: () => controller.login()
-        ),
+        () => ExButtonDefault(label: 'Masuk', width: double.infinity, isEnable: controller.isAllFormValid.value, onPressed: () => controller.login()),
       ),
       16.heightBox,
       TextButton(

@@ -32,7 +32,8 @@ class HomeController extends GetxController {
     if (user == null) {
       Get.offAll(() => Get.toNamed(Routes.HOME));
     } else {
-      Get.offAll(() => Get.toNamed(Routes.DASHBOARD));
+      //fix me!
+      Get.offAll(() => Get.toNamed(Routes.DASHBOARD_BUYER));
     }
   }
 }

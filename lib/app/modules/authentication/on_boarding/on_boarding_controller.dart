@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
+import 'package:jualin_flutter_3/app/core/base/base_controller.dart';
 
 import '../../../routes/app_pages.dart';
 
-class OnBoardingController extends GetxController {
+class OnBoardingController extends BaseController {
   final userRole = ''.obs;
 
   @override
@@ -11,8 +12,8 @@ class OnBoardingController extends GetxController {
     super.onInit();
   }
 
-  void goToHome() async {
-    await Get.delete<OnBoardingController>();
+  void goToHome() {
+    Get.delete<OnBoardingController>();
     Get.toNamed(Routes.HOME);
   }
 
