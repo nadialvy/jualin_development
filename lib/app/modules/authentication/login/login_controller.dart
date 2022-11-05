@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:gredu_common/gredu_common.dart';
 import 'package:logger/logger.dart';
 
-import '../../../core/constants/type_user.dart';
 import '../../../helper/snackbar_helper.dart';
 import '../../../routes/app_pages.dart';
 
