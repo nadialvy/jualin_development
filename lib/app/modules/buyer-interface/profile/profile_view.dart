@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gredu_common/gredu_common.dart';
 
-import '../../../../core/resource/color.dart';
-import '../../../../helper/_index.dart';
-import '../../../../widgets/index.dart';
-import '../profile_controller.dart';
+import '../../../core/resource/color.dart';
+import '../../../helper/_index.dart';
+import '../../../widgets/index.dart';
+import 'profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
   const ProfileView({Key? key}) : super(key: key);

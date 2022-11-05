@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import '../../../../widgets/index.dart';
-import '../../../../core/resource/color.dart';
-import '../help_controller.dart';
+import '../../../core/resource/color.dart';
+import '../../../widgets/index.dart';
+import 'help_controller.dart';
 
 class ReportProblemView extends GetView<HelpController> {
   const ReportProblemView({Key? key}) : super(key: key);
