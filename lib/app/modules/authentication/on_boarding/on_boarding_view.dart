@@ -6,7 +6,6 @@ import 'package:gredu_common/gredu_common.dart';
 import '../../../core/constants/type_user.dart';
 import '../../../core/resource/color.dart';
 import '../../../widgets/index.dart';
-import '../../home/home_view.dart';
 import 'on_boarding_controller.dart';
 
 class OnBoardingView extends GetView<OnBoardingController> {
@@ -19,12 +18,12 @@ class OnBoardingView extends GetView<OnBoardingController> {
         elevation: 0,
         shadowColor: Colors.transparent,
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_outlined,
-              color: colorBlack,
-            ),
-            onPressed: () => Get.to(const HomeView())),
+        leading: const Icon(
+          Icons.arrow_back_outlined,
+          color: colorBlack,
+        ).onTap(() {
+          controller.goToHome();
+        }),
       ),
       body: SizedBox(
         width: double.infinity,
