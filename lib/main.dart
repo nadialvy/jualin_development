@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:jualin_flutter_3/app/core/resource/color.dart';
-import 'app/modules/home/controllers/home_controller.dart';
+import 'app/modules/home/home_controller.dart';
 import 'app/routes/app_pages.dart';
 
 Future main() async {
