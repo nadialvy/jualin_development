@@ -1,20 +1,9 @@
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
+
 class SettingSellerController extends GetxController {
-  //TODO: Implement SettingSellerController
+  void goToNotificationPage() => Get.toNamed(Routes.NOTIFICATION_SELLER);
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
+  void goToHelpPage() => Get.toNamed(Routes.HELP_SELLER);
 }

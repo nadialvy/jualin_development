@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'order_seller_controller.dart';
+import 'help_seller_controller.dart';
 
-class OrderSellerView extends GetView<OrderSellerController> {
-  const OrderSellerView({super.key});
+class HelpSellerView extends GetView<HelpSellerController> {
+  const HelpSellerView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('OrderSellerView'),
+        title: const Text('HelpSellerView'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          'OrderSellerView is working',
+          'HelpSellerView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),

@@ -30,6 +30,10 @@ import '../modules/seller-interface/chat_seller/chat_seller_binding.dart';
 import '../modules/seller-interface/chat_seller/chat_seller_view.dart';
 import '../modules/seller-interface/dashboard_seller/dashboard_seller_binding.dart';
 import '../modules/seller-interface/dashboard_seller/dashboard_seller_view.dart';
+import '../modules/seller-interface/help_seller/help_seller_binding.dart';
+import '../modules/seller-interface/help_seller/help_seller_view.dart';
+import '../modules/seller-interface/notification_seller/notification_seller_binding.dart';
+import '../modules/seller-interface/notification_seller/notification_seller_view.dart';
 import '../modules/seller-interface/order_seller/order_seller_binding.dart';
 import '../modules/seller-interface/order_seller/order_seller_view.dart';
 import '../modules/seller-interface/persistent_tab_seller/persistent_tab_seller_binding.dart';
@@ -145,6 +149,16 @@ class AppPages {
       name: _Paths.PROFILE_SELLER,
       page: () => ProfileSellerView(),
       binding: ProfileSellerBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFICATION_SELLER,
+      page: () => NotificationSellerView(),
+      binding: NotificationSellerBinding(),
+    ),
+    GetPage(
+      name: _Paths.HELP_SELLER,
+      page: () => HelpSellerView(),
+      binding: HelpSellerBinding(),
     ),
   ];
 }

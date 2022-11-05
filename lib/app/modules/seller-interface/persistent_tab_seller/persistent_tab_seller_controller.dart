@@ -24,9 +24,9 @@ class PersistentTabSellerController extends GetxController {
   final bottomNavigationController = PersistentTabController();
   final pageList = [
     const DashboardSellerView(),
-    OrderSellerView(),
-    ChatSellerView(),
-    SettingSellerView(),
+    const OrderSellerView(),
+    const ChatSellerView(),
+    const SettingSellerView(),
   ];
 
   var currentIndex = MENU_DASHBOARD_SELLER;
