@@ -34,6 +34,8 @@ import '../modules/seller-interface/order_seller/order_seller_binding.dart';
 import '../modules/seller-interface/order_seller/order_seller_view.dart';
 import '../modules/seller-interface/persistent_tab_seller/persistent_tab_seller_binding.dart';
 import '../modules/seller-interface/persistent_tab_seller/persistent_tab_seller_view.dart';
+import '../modules/seller-interface/profile_seller/bindings/profile_seller_binding.dart';
+import '../modules/seller-interface/profile_seller/views/profile_seller_view.dart';
 import '../modules/seller-interface/setting_seller/setting_seller_binding.dart';
 import '../modules/seller-interface/setting_seller/setting_seller_view.dart';
 
@@ -138,6 +140,11 @@ class AppPages {
       name: _Paths.SETTING_SELLER,
       page: () => SettingSellerView(),
       binding: SettingSellerBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE_SELLER,
+      page: () => ProfileSellerView(),
+      binding: ProfileSellerBinding(),
     ),
   ];
 }

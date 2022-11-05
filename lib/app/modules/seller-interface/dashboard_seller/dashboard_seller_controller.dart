@@ -8,6 +8,8 @@ import 'package:logger/logger.dart';
 
 import '../../../routes/app_pages.dart';
 
+var logger = Logger();
+
 class DashboardSellerController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -19,7 +21,10 @@ class DashboardSellerController extends GetxController {
     yield* firestore.collection("user").doc(uid).snapshots();
   }
 
-  // void goToProfilePage() => Get.toNamed(Routes.PROFILE_SELLER);
+  void goToProfilePage() {
+    logger.i('go to profile page');
+    Get.toNamed(Routes.PROFILE_SELLER);
+  }
 
   Future<void> updatePosition(Position position, String address) async {
     String uid = auth.currentUser!.uid;

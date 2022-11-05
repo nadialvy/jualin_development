@@ -54,7 +54,7 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
                           Icons.person,
                           color: colorPrimary,
                         ),
-                        onPressed: () => {},
+                        onPressed: () => {controller.goToProfilePage()},
                       ),
                     ])
                   ]),
