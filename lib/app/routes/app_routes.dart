@@ -26,8 +26,10 @@ abstract class Routes {
   static const NOTIFICATION_BUYER = _Paths.NOTIFICATION_BUYER;
   static const HELP_BUYER = _Paths.HELP_BUYER;
   static const CHAT_WITH_SELLER = _Paths.CHAT_BUYER + _Paths.CHAT_WITH_SELLER;
-  static const CHAT_WITH_STALL_OWNER =_Paths.CHAT_BUYER + _Paths.CHAT_WITH_STALL_OWNER;
-  static const NOTIF_DASHBOARD = _Paths.DASHBOARD_BUYER + _Paths.NOTIF_DASHBOARD;
+  static const CHAT_WITH_STALL_OWNER =
+      _Paths.CHAT_BUYER + _Paths.CHAT_WITH_STALL_OWNER;
+  static const NOTIF_DASHBOARD =
+      _Paths.DASHBOARD_BUYER + _Paths.NOTIF_DASHBOARD;
 
   ///SELLER SECTION
   static const DASHBOARD_SELLER = _Paths.DASHBOARD_SELLER;
@@ -38,6 +40,8 @@ abstract class Routes {
   static const PROFILE_SELLER = _Paths.PROFILE_SELLER;
   static const NOTIFICATION_SELLER = _Paths.NOTIFICATION_SELLER;
   static const HELP_SELLER = _Paths.HELP_SELLER;
+  static const CHAT_WITH_BUYER =_Paths.CHAT_SELLER + _Paths.CHAT_WITH_BUYER;
+  static const CHAT_WITH_STALL_OWNER_ON_SELLER = _Paths.CHAT_SELLER + _Paths.CHAT_WITH_STALL_OWNER_ON_SELLER;
 }
 
 abstract class _Paths {
@@ -69,4 +73,6 @@ abstract class _Paths {
   static const NOTIFICATION_SELLER = '/notification-seller';
   static const HELP_SELLER = '/help-seller';
   static const NOTIF_DASHBOARD = '/notif-dashboard';
+  static const CHAT_WITH_BUYER = '/chat-with-buyer';
+  static const CHAT_WITH_STALL_OWNER_ON_SELLER = '/chat-with-stall-owner-on-seller';
 }
