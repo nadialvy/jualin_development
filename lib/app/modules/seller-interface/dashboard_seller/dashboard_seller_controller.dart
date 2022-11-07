@@ -34,6 +34,12 @@ class DashboardSellerController extends GetxController {
     Get.toNamed(Routes.PROFILE_SELLER);
   }
 
+  void goToNotifPage() {
+
+    logger.i('go to notifs');
+    Get.toNamed(Routes.NOTIF_DASHBOARD_SELLER);
+  }
+
   Future<void> updatePosition(Position position, String address) async {
     String uid = auth.currentUser!.uid;
 
