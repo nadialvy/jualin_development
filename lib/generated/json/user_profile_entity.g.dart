@@ -1,9 +1,5 @@
-// ignore_for_file: unnecessary_question_mark
-
-
+import 'package:jualin_flutter_3/generated/json/base/json_convert_content.dart';
 import 'package:jualin_flutter_3/app/models/request/response/user_profile_entity.dart';
-
-import 'base/json_convert_content.dart';
 
 UserProfileEntity $UserProfileEntityFromJson(Map<String, dynamic> json) {
 	final UserProfileEntity userProfileEntity = UserProfileEntity();

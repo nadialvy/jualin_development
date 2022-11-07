@@ -49,7 +49,7 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
                           Icons.notifications,
                           color: colorPrimary,
                         ),
-                        onPressed: () {},
+                        onPressed: () => controller.goToProfilePage(),
                       ),
                       IconButton(
                         icon: Icon(
@@ -63,7 +63,7 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
                   10.heightBox,
                   buildSearchBox(),
                   19.heightBox,
-                  buildTitle('Pedagang Keliling'),
+                  buildTitle('Pedagang Keliling').onTap(() => controller.goToPitchmanList()),
                   12.heightBox,
                   buildContainer([
                     buildCard(),
@@ -73,7 +73,7 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
                     buildCard(),
                   ]),
                   19.heightBox,
-                  buildTitle('Pedagang Kaki Lima'),
+                  buildTitle('Pedagang Kaki Lima').onTap(() => controller.goToCadgerList()),
                   12.heightBox,
                   buildContainer([
                     buildCard(),
@@ -130,6 +130,13 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
       [
         title.text.size(16).bold.make(),
         'Lihat semua >'.text.size(12).color(colorNeutral.shade400).make(),
+        // IconButton(
+        //   icon: Icon(
+        //     Icons.arrow_right_alt_rounded,
+        //     color: colorNeutral.shade400,
+        //   ),
+        //   onPressed: () => controller.goToRoundsmanList(),
+        // ),
       ],
       alignment: MainAxisAlignment.spaceBetween,
       axisSize: MainAxisSize.max,
