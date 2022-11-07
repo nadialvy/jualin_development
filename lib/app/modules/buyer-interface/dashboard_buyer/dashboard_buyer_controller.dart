@@ -30,6 +30,7 @@ class DashboardBuyerController extends GetxController {
   }
 
   void goToProfilePage() => Get.toNamed(Routes.PROFILE_BUYER);
+  void goToNotificationPage() => Get.toNamed(Routes.NOTIF_DASHBOARD);
 
   Future<void> updatePosition(Position position, String address) async {
     String uid = auth.currentUser!.uid;

@@ -59,7 +59,7 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
                             Icons.notifications,
                             color: colorPrimary,
                           ),
-                          onPressed: () {},
+                          onPressed: () => controller.goToNotificationPage(),
                         ),
                         IconButton(
                           icon: Icon(
