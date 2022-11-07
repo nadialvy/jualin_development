@@ -8,10 +8,10 @@ import '../modules/authentication/register/register_binding.dart';
 import '../modules/authentication/register/register_view.dart';
 import '../modules/buyer-interface/chat_buyer/chat_buyer_binding.dart';
 import '../modules/buyer-interface/chat_buyer/chat_buyer_view.dart';
-import '../modules/buyer-interface/chat_buyer/chat_seller/chat_with_seller_binding.dart';
-import '../modules/buyer-interface/chat_buyer/chat_seller/chat_with_seller_view.dart';
-import '../modules/buyer-interface/chat_buyer/chat_stall_owner/chat_with_stall_owner_binding.dart';
-import '../modules/buyer-interface/chat_buyer/chat_stall_owner/chat_with_stall_owner_view.dart';
+import '../modules/buyer-interface/chat_buyer/chat_with_seller/chat_with_seller_binding.dart';
+import '../modules/buyer-interface/chat_buyer/chat_with_seller/chat_with_seller_view.dart';
+import '../modules/buyer-interface/chat_buyer/chat_with_stall_owner/chat_with_stall_owner_binding.dart';
+import '../modules/buyer-interface/chat_buyer/chat_with_stall_owner/chat_with_stall_owner_view.dart';
 import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_binding.dart';
 import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_view.dart';
 import '../modules/buyer-interface/dashboard_buyer/notif_dashboard/notif_dashboard_binding.dart';
@@ -34,6 +34,10 @@ import '../modules/media_preview/image_preview/image_preview_binding.dart';
 import '../modules/media_preview/image_preview/image_preview_view.dart';
 import '../modules/seller-interface/chat_seller/chat_seller_binding.dart';
 import '../modules/seller-interface/chat_seller/chat_seller_view.dart';
+import '../modules/seller-interface/chat_seller/chat_with_buyer/chat_with_buyer_binding.dart';
+import '../modules/seller-interface/chat_seller/chat_with_buyer/chat_with_buyer_view.dart';
+import '../modules/seller-interface/chat_seller/chat_with_stall_owner_on_seller/chat_with_stall_owner_on_seller_binding.dart';
+import '../modules/seller-interface/chat_seller/chat_with_stall_owner_on_seller/chat_with_stall_owner_on_seller_view.dart';
 import '../modules/seller-interface/dashboard_seller/dashboard_seller_binding.dart';
 import '../modules/seller-interface/dashboard_seller/dashboard_seller_view.dart';
 import '../modules/seller-interface/help_seller/help_seller_binding.dart';
@@ -164,6 +168,18 @@ class AppPages {
       name: _Paths.CHAT_SELLER,
       page: () => ChatSellerView(),
       binding: ChatSellerBinding(),
+      children: [
+        GetPage(
+          name: _Paths.CHAT_WITH_BUYER,
+          page: () => ChatWithBuyerView(),
+          binding: ChatWithBuyerBinding(),
+        ),
+        GetPage(
+          name: _Paths.CHAT_WITH_STALL_OWNER_ON_SELLER,
+          page: () => ChatWithStallOwnerOnSellerView(),
+          binding: ChatWithStallOwnerOnSellerBinding(),
+        ),
+      ],
     ),
     GetPage(
       name: _Paths.SETTING_SELLER,

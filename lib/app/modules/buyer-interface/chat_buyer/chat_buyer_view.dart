@@ -8,8 +8,8 @@ import 'package:jualin_flutter_3/app/widgets/ex_ui_error_or_empty.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'chat_buyer_controller.dart';
-import 'chat_seller/chat_with_seller_view.dart';
-import 'chat_stall_owner/chat_with_stall_owner_view.dart';
+import 'chat_with_seller/chat_with_seller_view.dart';
+import 'chat_with_stall_owner/chat_with_stall_owner_view.dart';
 
 class ChatBuyerView extends GetView<ChatBuyerController> {
   ChatBuyerView({Key? key}) : super(key: key);
