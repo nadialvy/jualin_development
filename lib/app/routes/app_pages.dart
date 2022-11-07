@@ -8,6 +8,10 @@ import '../modules/authentication/register/register_binding.dart';
 import '../modules/authentication/register/register_view.dart';
 import '../modules/buyer-interface/chat_buyer/chat_buyer_binding.dart';
 import '../modules/buyer-interface/chat_buyer/chat_buyer_view.dart';
+import '../modules/buyer-interface/chat_buyer/chat_seller/chat_with_seller_binding.dart';
+import '../modules/buyer-interface/chat_buyer/chat_seller/chat_with_seller_view.dart';
+import '../modules/buyer-interface/chat_buyer/chat_stall_owner/chat_with_stall_owner_binding.dart';
+import '../modules/buyer-interface/chat_buyer/chat_stall_owner/chat_with_stall_owner_view.dart';
 import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_binding.dart';
 import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_view.dart';
 import '../modules/buyer-interface/help_buyer/help_buyer_binding.dart';
@@ -94,6 +98,18 @@ class AppPages {
       name: _Paths.CHAT_BUYER,
       page: () => ChatBuyerView(),
       binding: ChatBuyerBinding(),
+      children: [
+        GetPage(
+          name: _Paths.CHAT_WITH_STALL_OWNER,
+          page: () => ChatWithStallOwnerView(),
+          binding: ChatWithStallOwnerBinding(),
+        ),
+        GetPage(
+          name: _Paths.CHAT_WITH_SELLER,
+          page: () => ChatWithSellerView(),
+          binding: ChatWithSellerBinding(),
+        ),
+      ],
     ),
     GetPage(
       name: _Paths.SETTING_BUYER,
