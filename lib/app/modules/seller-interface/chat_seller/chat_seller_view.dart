@@ -13,8 +13,8 @@ class ChatSellerView extends GetView<ChatSellerController> {
   ChatSellerView({super.key});
 
   final tabList = [
-    ChatWithBuyerView(),
-    ChatWithStallOwnerOnSellerView(),
+    const ChatWithBuyerView(),
+    const ChatWithStallOwnerOnSellerView(),
   ];
 
   @override

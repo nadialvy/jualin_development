@@ -40,6 +40,8 @@ import '../modules/seller-interface/chat_seller/chat_with_stall_owner_on_seller/
 import '../modules/seller-interface/chat_seller/chat_with_stall_owner_on_seller/chat_with_stall_owner_on_seller_view.dart';
 import '../modules/seller-interface/dashboard_seller/dashboard_seller_binding.dart';
 import '../modules/seller-interface/dashboard_seller/dashboard_seller_view.dart';
+import '../modules/seller-interface/dashboard_seller/notif_dashboard_seller/notif_dashboard_seller_binding.dart';
+import '../modules/seller-interface/dashboard_seller/notif_dashboard_seller/notif_dashboard_seller_view.dart';
 import '../modules/seller-interface/help_seller/help_seller_binding.dart';
 import '../modules/seller-interface/help_seller/help_seller_view.dart';
 import '../modules/seller-interface/notification_seller/notification_seller_binding.dart';
@@ -153,6 +155,13 @@ class AppPages {
       name: _Paths.DASHBOARD_SELLER,
       page: () => DashboardSellerView(),
       binding: DashboardSellerBinding(),
+      children: [
+        GetPage(
+          name: _Paths.NOTIF_DASHBOARD_SELLER,
+          page: () => NotifDashboardSellerView(),
+          binding: NotifDashboardSellerBinding(),
+        ),
+      ],
     ),
     GetPage(
       name: _Paths.PERSISTENT_TAB_SELLER,

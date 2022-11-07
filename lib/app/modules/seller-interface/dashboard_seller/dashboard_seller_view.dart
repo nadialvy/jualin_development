@@ -57,7 +57,7 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
                             Icons.notifications,
                             color: colorPrimary,
                           ),
-                          onPressed: () {},
+                          onPressed: () => controller.goToNotifPage(),
                         ),
                         IconButton(
                           icon: const Icon(
