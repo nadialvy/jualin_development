@@ -11,7 +11,7 @@ const MaterialColor colorPrimary = MaterialColor(
   _colorPrimaryValue,
   <int, Color>{
     50: Color(0xFF9FF4FF),
-    100: Color(0xFF00B2CA),
+    100: Color(0xFFE3F2FF),
     200: Color(0xFF04A6C2),
     300: Color(0xFF0899BA),
     400: Color(0xFF0F80AA),

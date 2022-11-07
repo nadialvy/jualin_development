@@ -14,6 +14,8 @@ import '../modules/buyer-interface/chat_buyer/chat_stall_owner/chat_with_stall_o
 import '../modules/buyer-interface/chat_buyer/chat_stall_owner/chat_with_stall_owner_view.dart';
 import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_binding.dart';
 import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_view.dart';
+import '../modules/buyer-interface/dashboard_buyer/notif_dashboard/notif_dashboard_binding.dart';
+import '../modules/buyer-interface/dashboard_buyer/notif_dashboard/notif_dashboard_view.dart';
 import '../modules/buyer-interface/help_buyer/help_buyer_binding.dart';
 import '../modules/buyer-interface/help_buyer/help_buyer_view.dart';
 import '../modules/buyer-interface/notification_buyer/notification_buyer_binding.dart';
@@ -120,6 +122,13 @@ class AppPages {
       name: _Paths.DASHBOARD_BUYER,
       page: () => DashboardBuyerView(),
       binding: DashboardBuyerBinding(),
+      children: [
+        GetPage(
+          name: _Paths.NOTIF_DASHBOARD,
+          page: () => NotifDashboardView(),
+          binding: NotifDashboardBinding(),
+        ),
+      ],
     ),
     GetPage(
       name: _Paths.PROFILE_BUYER,
