@@ -3,20 +3,16 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../../core/resource/color.dart';
 import 'order_buyer_controller.dart';
-
-var logger = Logger();
 
 class OrderBuyerView extends GetView<OrderBuyerController> {
   const OrderBuyerView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    logger.i(controller.getDataProduct());
     return Scaffold(
       appBar: AppBar(
         title: 'Saldo'.text.color(colorBlack).size(20).bold.make().pOnly(top: 16),
