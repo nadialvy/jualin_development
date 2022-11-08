@@ -14,11 +14,7 @@ Future main() async {
       // darkTheme: AppThemes.dark,
       // themeMode: AppThemes.theme,
       // theme: AppThemes.light,
-      theme: ThemeData(
-        primarySwatch: colorPrimary,
-        primaryColor: colorPrimary,
-        fontFamily: 'PlusJakartaSans'
-      ),
+      theme: ThemeData(primarySwatch: colorPrimary, primaryColor: colorPrimary, fontFamily: 'PlusJakartaSans'),
       defaultTransition: Transition.native,
       debugShowCheckedModeBanner: false,
       title: "Jualin",
