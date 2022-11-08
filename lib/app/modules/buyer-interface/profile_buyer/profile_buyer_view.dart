@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:gredu_common/gredu_common.dart';
-import 'package:logger/logger.dart';
 
 import '../../../core/resource/color.dart';
 import '../../../helper/_index.dart';

@@ -1,14 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:gredu_common/gredu_common.dart';
 import 'package:jualin_flutter_3/app/models/request/response/list_seller_entity.dart';
 import 'package:jualin_flutter_3/app/modules/buyer-interface/pitchman_list/pitchman_list_controller.dart';
-import 'package:jualin_flutter_3/app/widgets/ex_ui_load_more.dart';
 // import 'package:jualin_flutter_3/app/widgets/ex_ui_loading.dart';
 import 'package:logger/logger.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../core/resource/color.dart';
 
