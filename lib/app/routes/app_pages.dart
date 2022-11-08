@@ -10,8 +10,14 @@ import '../modules/buyer-interface/cadger_list/cadger_list_binding.dart';
 import '../modules/buyer-interface/cadger_list/cadger_list_view.dart';
 import '../modules/buyer-interface/chat_buyer/chat_buyer_binding.dart';
 import '../modules/buyer-interface/chat_buyer/chat_buyer_view.dart';
+import '../modules/buyer-interface/chat_buyer/chat_with_seller/chat_with_seller_binding.dart';
+import '../modules/buyer-interface/chat_buyer/chat_with_seller/chat_with_seller_view.dart';
+import '../modules/buyer-interface/chat_buyer/chat_with_stall_owner/chat_with_stall_owner_binding.dart';
+import '../modules/buyer-interface/chat_buyer/chat_with_stall_owner/chat_with_stall_owner_view.dart';
 import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_binding.dart';
 import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_view.dart';
+import '../modules/buyer-interface/dashboard_buyer/notif_dashboard/notif_dashboard_binding.dart';
+import '../modules/buyer-interface/dashboard_buyer/notif_dashboard/notif_dashboard_view.dart';
 import '../modules/buyer-interface/detail_seller/detail_seller_binding.dart';
 import '../modules/buyer-interface/detail_seller/detail_seller_view.dart';
 import '../modules/buyer-interface/help_buyer/help_buyer_binding.dart';
@@ -34,8 +40,14 @@ import '../modules/media_preview/image_preview/image_preview_binding.dart';
 import '../modules/media_preview/image_preview/image_preview_view.dart';
 import '../modules/seller-interface/chat_seller/chat_seller_binding.dart';
 import '../modules/seller-interface/chat_seller/chat_seller_view.dart';
+import '../modules/seller-interface/chat_seller/chat_with_buyer/chat_with_buyer_binding.dart';
+import '../modules/seller-interface/chat_seller/chat_with_buyer/chat_with_buyer_view.dart';
+import '../modules/seller-interface/chat_seller/chat_with_stall_owner_on_seller/chat_with_stall_owner_on_seller_binding.dart';
+import '../modules/seller-interface/chat_seller/chat_with_stall_owner_on_seller/chat_with_stall_owner_on_seller_view.dart';
 import '../modules/seller-interface/dashboard_seller/dashboard_seller_binding.dart';
 import '../modules/seller-interface/dashboard_seller/dashboard_seller_view.dart';
+import '../modules/seller-interface/dashboard_seller/notif_dashboard_seller/notif_dashboard_seller_binding.dart';
+import '../modules/seller-interface/dashboard_seller/notif_dashboard_seller/notif_dashboard_seller_view.dart';
 import '../modules/seller-interface/help_seller/help_seller_binding.dart';
 import '../modules/seller-interface/help_seller/help_seller_view.dart';
 import '../modules/seller-interface/notification_seller/notification_seller_binding.dart';
@@ -100,6 +112,18 @@ class AppPages {
       name: _Paths.CHAT_BUYER,
       page: () => ChatBuyerView(),
       binding: ChatBuyerBinding(),
+      children: [
+        GetPage(
+          name: _Paths.CHAT_WITH_STALL_OWNER,
+          page: () => ChatWithStallOwnerView(),
+          binding: ChatWithStallOwnerBinding(),
+        ),
+        GetPage(
+          name: _Paths.CHAT_WITH_SELLER,
+          page: () => ChatWithSellerView(),
+          binding: ChatWithSellerBinding(),
+        ),
+      ],
     ),
     GetPage(
       name: _Paths.SETTING_BUYER,
@@ -110,6 +134,13 @@ class AppPages {
       name: _Paths.DASHBOARD_BUYER,
       page: () => DashboardBuyerView(),
       binding: DashboardBuyerBinding(),
+      children: [
+        GetPage(
+          name: _Paths.NOTIF_DASHBOARD,
+          page: () => NotifDashboardView(),
+          binding: NotifDashboardBinding(),
+        ),
+      ],
     ),
     GetPage(
       name: _Paths.PROFILE_BUYER,
@@ -130,6 +161,13 @@ class AppPages {
       name: _Paths.DASHBOARD_SELLER,
       page: () => DashboardSellerView(),
       binding: DashboardSellerBinding(),
+      children: [
+        GetPage(
+          name: _Paths.NOTIF_DASHBOARD_SELLER,
+          page: () => NotifDashboardSellerView(),
+          binding: NotifDashboardSellerBinding(),
+        ),
+      ],
     ),
     GetPage(
       name: _Paths.PERSISTENT_TAB_SELLER,
@@ -145,6 +183,18 @@ class AppPages {
       name: _Paths.CHAT_SELLER,
       page: () => ChatSellerView(),
       binding: ChatSellerBinding(),
+      children: [
+        GetPage(
+          name: _Paths.CHAT_WITH_BUYER,
+          page: () => ChatWithBuyerView(),
+          binding: ChatWithBuyerBinding(),
+        ),
+        GetPage(
+          name: _Paths.CHAT_WITH_STALL_OWNER_ON_SELLER,
+          page: () => ChatWithStallOwnerOnSellerView(),
+          binding: ChatWithStallOwnerOnSellerBinding(),
+        ),
+      ],
     ),
     GetPage(
       name: _Paths.SETTING_SELLER,
@@ -173,7 +223,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DETAIL_SELLER,
-      page: () =>  DetailSellerView(),
+      page: () => DetailSellerView(),
       binding: DetailSellerBinding(),
     ),
     GetPage(

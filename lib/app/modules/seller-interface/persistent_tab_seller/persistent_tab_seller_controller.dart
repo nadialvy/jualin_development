@@ -25,7 +25,7 @@ class PersistentTabSellerController extends GetxController {
   final pageList = [
     const DashboardSellerView(),
     const OrderSellerView(),
-    const ChatSellerView(),
+    ChatSellerView(),
     const SettingSellerView(),
   ];
 
@@ -33,7 +33,7 @@ class PersistentTabSellerController extends GetxController {
 
   void onTabChange(index) async {
     if (index == MENU_DASHBOARD_SELLER && currentIndex != MENU_DASHBOARD_SELLER) {
-      Get.lazyPut<DashboardSellerController>(() => DashboardSellerController());
+      Get.put(DashboardSellerController());
       Get.find<DashboardSellerController>().onReady();
 
       final dashboardSellerController = Get.find<DashboardSellerController>();

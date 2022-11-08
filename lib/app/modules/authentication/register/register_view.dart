@@ -70,7 +70,7 @@ class RegisterView extends GetView<RegisterController> {
         isLabelBold: true,
         leftIcon: SvgPicture.asset('assets/images/ic_google.svg'),
         width: double.infinity,
-        onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan, kamu bisa mencoba fitur lain'),
+        onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
       ).pSymmetric(v: 6),
       if (Platform.isIOS)
         ExButtonOutline(
@@ -78,7 +78,7 @@ class RegisterView extends GetView<RegisterController> {
           labelColor: colorNeutral,
           leftIcon: SvgPicture.asset('assets/images/ic_apple.svg'),
           width: double.infinity,
-          onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan, kamu bisa mencoba fitur lain'),
+          onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
         ).pSymmetric(v: 6),
     ]);
   }
@@ -158,7 +158,7 @@ class RegisterView extends GetView<RegisterController> {
           label: 'Daftar',
           width: double.infinity,
           isEnable: controller.isAllFormValid.value,
-          onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan, kamu bisa mencoba fitur lain.'),
+          onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
         ),
       ),
     ]);

@@ -1,22 +1,29 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:gredu_common/gredu_common.dart';
+import 'package:logger/logger.dart';
 
-import '../../../core/constants/type_user.dart';
 import '../../../helper/snackbar_helper.dart';
 import '../../../routes/app_pages.dart';
+
+var logger = Logger();
 
 class LoginController extends GetxController {
   final tfEmailOrPhone = TextEditingController();
   final tfPin = TextEditingController();
-  FirebaseAuth auth = FirebaseAuth.instance;
 
   final isEmailOrPhoneValid = false.obs;
   final isPasswordValid = false.obs;
   final isAllFormValid = false.obs;
   final dynamicLinkData = <String, String>{}.obs;
   final userRole = ''.obs;
+  final userOriginalRole = ''.obs;
+  List allUsers = [].obs;
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   @override
   void onInit() {
@@ -33,17 +40,35 @@ class LoginController extends GetxController {
       //login with number
       if (tfEmailOrPhone.text.contains('08')) {
         ExLoading.show();
-        SnackbarHelper.info('Oops! Fitur login dengan nomor hp masih dalam tahap pengembangan, kamu bisa menggunakan email untuk login');
+        SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;(');
       } else {
         ExLoading.show();
         UserCredential userCredential = await auth.signInWithEmailAndPassword(email: tfEmailOrPhone.text, password: tfPin.text);
 
         if (userCredential.user != null) {
           ExLoading.show();
-          if (userCredential.user!.emailVerified == true && userRole.value == UserType.BUYER) {
-            Get.offAllNamed(Routes.PERSISTENT_TAB_BUYER);
-          } else if (userCredential.user!.emailVerified == true && userRole.value == UserType.SELLER) {
-            Get.offAllNamed(Routes.PERSISTENT_TAB_SELLER);
+
+          String uid = auth.currentUser!.uid;
+          await FirebaseFirestore.instance.collection("user").doc(uid).get().then((value) {
+            userOriginalRole.value = value.data()!["role"];
+          });
+
+          if (userCredential.user!.emailVerified == true) {
+            if (userRole.value == "buyer" && userOriginalRole.value == "buyer") {
+              Get.offAllNamed(Routes.PERSISTENT_TAB_BUYER);
+            } else if (userRole.value == "seller" && userOriginalRole.value == "seller") {
+              Get.offAllNamed(Routes.PERSISTENT_TAB_SELLER);
+            } else {
+              ExLoading.dismiss();
+              ExAlert.error(
+                title: 'Akun Tidak Terdaftar!',
+                message: userRole.value == "buyer" ? 'Akun email yang anda gunakan tidak terdaftar sebagai pembeli' : 'Akun email yang anda gunakan tidak terdaftar sebagai pedagang',
+                onYes: () {
+                  ExLoading.dismiss();
+                  Get.back();
+                },
+              );
+            }
           } else {
             ExLoading.show();
             ExAlert.confirm(

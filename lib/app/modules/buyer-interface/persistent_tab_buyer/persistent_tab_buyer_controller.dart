@@ -24,12 +24,11 @@ const MENU_SETTING_BUYER = 3;
 var logger = Logger();
 
 class PersistentTabBuyerController extends GetxController {
-
   final bottomNavigationController = PersistentTabController();
   final pageList = [
     const DashboardBuyerView(),
     const OrderBuyerView(),
-    const ChatBuyerView(),
+    ChatBuyerView(),
     const SettingBuyerView(),
   ];
 
@@ -37,7 +36,7 @@ class PersistentTabBuyerController extends GetxController {
 
   void onTabChange(index) async {
     if (index == MENU_DASHBOARD_BUYER && currentIndex != MENU_DASHBOARD_BUYER) {
-      Get.lazyPut<DashboardBuyerController>(() => DashboardBuyerController());
+      Get.put<DashboardBuyerController>(DashboardBuyerController());
       Get.find<DashboardBuyerController>().onReady();
 
       final dashboardBuyerController = Get.find<DashboardBuyerController>();

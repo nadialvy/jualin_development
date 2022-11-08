@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:jualin_flutter_3/app/helper/snackbar_helper.dart';
 import 'package:logger/logger.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../routes/app_pages.dart';
 
@@ -15,6 +16,13 @@ class DashboardSellerController extends GetxController {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   final tfSearch = TextEditingController();
 
+  final rcDashboard = RefreshController();
+
+  Future<void> onRefreshDashboard() async {
+    streamUser();
+    rcDashboard.refreshCompleted();
+  }
+
   Stream<DocumentSnapshot<Map<String, dynamic>>> streamUser() async* {
     String uid = auth.currentUser!.uid;
 
@@ -24,6 +32,12 @@ class DashboardSellerController extends GetxController {
   void goToProfilePage() {
     logger.i('go to profile page');
     Get.toNamed(Routes.PROFILE_SELLER);
+  }
+
+  void goToNotifPage() {
+
+    logger.i('go to notifs');
+    Get.toNamed(Routes.NOTIF_DASHBOARD_SELLER);
   }
 
   Future<void> updatePosition(Position position, String address) async {

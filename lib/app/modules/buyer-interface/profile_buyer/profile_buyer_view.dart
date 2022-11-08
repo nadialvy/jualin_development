@@ -45,7 +45,7 @@ class ProfileBuyerView extends GetView<ProfileBuyerController> {
                       scale: 2,
                     ),
                     8.heightBox,
-                    'Unggah Poto'.text.color(colorPrimary).size(14).bold.make().onTap(() => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan, kamu bisa mencoba fitur lain')),
+                    'Unggah Poto'.text.color(colorPrimary).size(14).bold.make().onTap(() => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;(')),
                   ],
                   alignment: MainAxisAlignment.center,
                   crossAlignment: CrossAxisAlignment.center,

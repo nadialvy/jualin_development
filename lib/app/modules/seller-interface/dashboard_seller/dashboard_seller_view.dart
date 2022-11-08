@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../../core/resource/color.dart';
@@ -15,99 +16,109 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: colorWhite,
-      body: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-        stream: controller.streamUser(),
-        builder: ((context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const ExUiLoading();
-          }
-          if (snapshot.hasData) {
-            Map<String, dynamic> userData = snapshot.data!.data()!;
-            return SafeArea(
-              child: VStack(
-                [
-                  HStack([
-                    VStack([
-                      'Hai, ${userData["full_name"]}'.text.color(colorBlack).size(20).bold.make(),
+      body: SmartRefresher(
+        enablePullUp: true,
+        controller: controller.rcDashboard,
+        onRefresh: () => controller.onRefreshDashboard(),
+        footer: CustomFooter(
+          builder: (context, mode) {
+            return const SizedBox.shrink();
+          },
+        ),
+        child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+          stream: controller.streamUser(),
+          builder: ((context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const ExUiLoading();
+            }
+            if (snapshot.hasData) {
+              Map<String, dynamic> userData = snapshot.data!.data()!;
+              return SafeArea(
+                child: VStack(
+                  [
+                    HStack([
+                      VStack([
+                        'Hai, ${userData["full_name"]}'.text.color(colorBlack).size(20).bold.make(),
+                        HStack([
+                          Image.asset(
+                            'assets/images/ic_place.png',
+                            scale: 2,
+                          ),
+                          5.widthBox,
+                          userData["address"] != null
+                              ? "${userData["address"]}".text.color(colorBlack).maxLines(1).size(12).ellipsis.make()
+                              : "Anda belum mengaktifkan lokasi".text.color(colorErrorDark).maxLines(1).size(12).ellipsis.make(),
+                        ])
+                      ]),
+                      const Spacer(),
                       HStack([
-                        Image.asset(
-                          'assets/images/ic_place.png',
-                          scale: 2,
+                        IconButton(
+                          icon: const Icon(
+                            Icons.notifications,
+                            color: colorPrimary,
+                          ),
+                          onPressed: () => controller.goToNotifPage(),
                         ),
-                        5.widthBox,
-                        userData["address"] != null
-                            ? "${userData["address"]}".text.color(colorBlack).maxLines(1).size(12).ellipsis.make()
-                            : "Anda belum mengaktifkan lokasi".text.color(colorErrorDark).maxLines(1).size(12).ellipsis.make(),
+                        IconButton(
+                          icon: const Icon(
+                            Icons.person,
+                            color: colorPrimary,
+                          ),
+                          onPressed: () => {controller.goToProfilePage()},
+                        ),
                       ])
                     ]),
-                    const Spacer(),
-                    HStack([
-                      IconButton(
-                        icon: const Icon(
-                          Icons.notifications,
-                          color: colorPrimary,
-                        ),
-                        onPressed: () {},
+                    10.heightBox,
+                    buildSearchBox(),
+                    19.heightBox,
+                    buildTitle('Daftar Panggilan'),
+                    12.heightBox,
+                    buildContainer([
+                      buildCard(),
+                      12.heightBox,
+                      buildCard(),
+                      12.heightBox,
+                      buildCard(),
+                    ]),
+                    19.heightBox,
+                    buildTitle('Pesanan'),
+                    12.heightBox,
+                    buildContainer([
+                      buildCard(),
+                      12.heightBox,
+                      buildCard(),
+                      12.heightBox,
+                      buildCard(),
+                    ]),
+                    19.heightBox,
+                    buildTitle('Lokasi Pembeli Sekitar'),
+                    16.heightBox,
+                    Container(
+                      height: 200,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: colorNeutral,
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                      IconButton(
-                        icon: const Icon(
-                          Icons.person,
-                          color: colorPrimary,
-                        ),
-                        onPressed: () => {controller.goToProfilePage()},
-                      ),
-                    ])
-                  ]),
-                  10.heightBox,
-                  buildSearchBox(),
-                  19.heightBox,
-                  buildTitle('Daftar Panggilan'),
-                  12.heightBox,
-                  buildContainer([
-                    buildCard(),
-                    12.heightBox,
-                    buildCard(),
-                    12.heightBox,
-                    buildCard(),
-                  ]),
-                  19.heightBox,
-                  buildTitle('Pesanan'),
-                  12.heightBox,
-                  buildContainer([
-                    buildCard(),
-                    12.heightBox,
-                    buildCard(),
-                    12.heightBox,
-                    buildCard(),
-                  ]),
-                  19.heightBox,
-                  buildTitle('Lokasi Pembeli Sekitar'),
-                  16.heightBox,
-                  Container(
-                    height: 200,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: colorNeutral,
-                      borderRadius: BorderRadius.circular(8),
                     ),
-                  ),
-                  19.heightBox,
-                  buildTitle('Lapak Tersedia'),
-                  16.heightBox,
-                  HStack([
-                    buildCardLapak(),
-                    buildCardLapak(),
-                    buildCardLapak(),
-                    buildCardLapak(),
-                    buildCardLapak(),
-                  ]).scrollHorizontal(),
-                  20.heightBox
-                ],
-              ),
-            ).pSymmetric(h: 16).scrollVertical();
-          }
-          return const ExUiErrorOrEmpty();
-        }),
+                    19.heightBox,
+                    buildTitle('Lapak Tersedia'),
+                    16.heightBox,
+                    HStack([
+                      buildCardLapak(),
+                      buildCardLapak(),
+                      buildCardLapak(),
+                      buildCardLapak(),
+                      buildCardLapak(),
+                    ]).scrollHorizontal(),
+                    20.heightBox
+                  ],
+                ),
+              ).pSymmetric(h: 16).scrollVertical();
+            }
+            return const ExUiErrorOrEmpty();
+          }),
+        ),
       ),
     );
   }

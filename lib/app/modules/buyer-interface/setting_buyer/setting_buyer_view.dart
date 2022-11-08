@@ -41,7 +41,7 @@ class SettingBuyerView extends GetView<SettingBuyerController> {
         'Pindah Role'.text.size(16).make()
       ])
           .onTap(
-            () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan, kamu bisa mencoba fitur lain'),
+            () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
           )
           .pOnly(bottom: 10),
       HStack([
@@ -54,7 +54,7 @@ class SettingBuyerView extends GetView<SettingBuyerController> {
         'Sewakan Lapak'.text.size(16).make()
       ])
           .onTap(
-            () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan, kamu bisa mencoba fitur lain'),
+            () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
           )
           .pOnly(bottom: 20),
     ]);
@@ -81,7 +81,7 @@ class SettingBuyerView extends GetView<SettingBuyerController> {
         'Privasi'.text.size(16).make()
       ])
           .onTap(
-            () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan, kamu bisa mencoba fitur lain'),
+            () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
           )
           .pOnly(bottom: 10),
       HStack([
@@ -107,7 +107,7 @@ class SettingBuyerView extends GetView<SettingBuyerController> {
         'Tentang'.text.size(16).make()
       ])
           .onTap(
-            () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan, kamu bisa mencoba fitur lain'),
+            () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
           )
           .pOnly(bottom: 10),
     ]);
