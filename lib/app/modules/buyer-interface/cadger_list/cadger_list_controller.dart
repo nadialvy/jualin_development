@@ -115,15 +115,4 @@ class CadgerListController extends GetxController {
       return listSeller;
     });
   }
-
-  // Stream<DocumentSnapshot<Map<String, dynamic>>> getDataProduct() async* {
-  //   yield* firestore.collection('product').doc().snapshots();
-
-  //   logger.i('hello');
-  //   logger.i(firestore.collection('product').doc('aWkmsd1HbLZE47HC9JXLkQm1ibp1').snapshots());
-  // logger.i(value);
-  // logger.i(ListSellerEntity.fromJson(value.docs));
-  // logger.i(value.metadata);
-  // logger.i(value.docs.length);
-  // }
 }
