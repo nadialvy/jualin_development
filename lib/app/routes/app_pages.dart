@@ -6,6 +6,8 @@ import '../modules/authentication/on_boarding/on_boarding_binding.dart';
 import '../modules/authentication/on_boarding/on_boarding_view.dart';
 import '../modules/authentication/register/register_binding.dart';
 import '../modules/authentication/register/register_view.dart';
+import '../modules/buyer-interface/cadger_list/cadger_list_binding.dart';
+import '../modules/buyer-interface/cadger_list/cadger_list_view.dart';
 import '../modules/buyer-interface/chat_buyer/chat_buyer_binding.dart';
 import '../modules/buyer-interface/chat_buyer/chat_buyer_view.dart';
 import '../modules/buyer-interface/chat_buyer/chat_with_seller/chat_with_seller_binding.dart';
@@ -16,6 +18,8 @@ import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_binding.dart'
 import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_view.dart';
 import '../modules/buyer-interface/dashboard_buyer/notif_dashboard/notif_dashboard_binding.dart';
 import '../modules/buyer-interface/dashboard_buyer/notif_dashboard/notif_dashboard_view.dart';
+import '../modules/buyer-interface/detail_seller/detail_seller_binding.dart';
+import '../modules/buyer-interface/detail_seller/detail_seller_view.dart';
 import '../modules/buyer-interface/help_buyer/help_buyer_binding.dart';
 import '../modules/buyer-interface/help_buyer/help_buyer_view.dart';
 import '../modules/buyer-interface/notification_buyer/notification_buyer_binding.dart';
@@ -24,6 +28,8 @@ import '../modules/buyer-interface/order_buyer/order_buyer_binding.dart';
 import '../modules/buyer-interface/order_buyer/order_buyer_view.dart';
 import '../modules/buyer-interface/persistent_tab_buyer/persistent_tab_buyer_binding.dart';
 import '../modules/buyer-interface/persistent_tab_buyer/persistent_tab_buyer_view.dart';
+import '../modules/buyer-interface/pitchman_list/pitchman_list_binding.dart';
+import '../modules/buyer-interface/pitchman_list/pitchman_list_view.dart';
 import '../modules/buyer-interface/profile_buyer/profile_buyer_binding.dart';
 import '../modules/buyer-interface/profile_buyer/profile_buyer_view.dart';
 import '../modules/buyer-interface/setting_buyer/setting_buyer_binding.dart';
@@ -209,6 +215,21 @@ class AppPages {
       name: _Paths.HELP_SELLER,
       page: () => HelpSellerView(),
       binding: HelpSellerBinding(),
+    ),
+    GetPage(
+      name: _Paths.PITCHMAN_LIST,
+      page: () => PitchmanListView(),
+      binding: PitchmanListBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_SELLER,
+      page: () => DetailSellerView(),
+      binding: DetailSellerBinding(),
+    ),
+    GetPage(
+      name: _Paths.CADGER_LIST,
+      page: () => const CadgerListView(),
+      binding: CadgerListBinding(),
     ),
   ];
 }
