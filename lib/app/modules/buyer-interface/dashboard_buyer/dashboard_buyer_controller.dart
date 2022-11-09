@@ -47,7 +47,10 @@ class DashboardBuyerController extends GetxController {
 
   void goToCadgerList() => Get.toNamed(Routes.CADGER_LIST);
 
-  void goToMapSellerlocation() => Get.toNamed(Routes.MAPS_SELLER_LOCATION);
+  void goToMapSellerlocation() {
+    SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;(');
+    Get.toNamed(Routes.MAPS_SELLER_LOCATION);
+  }
 
   Future<Position> determinePosition() async {
     bool serviceEnabled;

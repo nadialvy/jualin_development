@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:gredu_common/gredu_common.dart';
+import 'package:jualin_flutter_3/app/helper/snackbar_helper.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../core/resource/color.dart';
@@ -101,10 +102,10 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
                       decoration: BoxDecoration(
                         color: colorNeutral,
                         borderRadius: BorderRadius.circular(8),
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/dummy_map.png'),
-                          fit: BoxFit.fill,
-                        ),
+                        // image: DecorationImage(
+                        //   image: AssetImage('assets/images/dummy_map.png'),
+                        //   fit: BoxFit.fill,
+                        // ),
                       ),
                     ),
                     19.heightBox,
