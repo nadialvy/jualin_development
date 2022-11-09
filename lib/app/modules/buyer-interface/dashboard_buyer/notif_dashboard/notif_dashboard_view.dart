@@ -20,7 +20,7 @@ class NotifDashboardView extends GetView<NotifDashboardController> {
         leading: const Icon(
           Icons.arrow_back,
           color: colorBlack,
-        ),
+        ).onTap(() => Get.back()),
       ),
       body: VStack([
         HStack(
