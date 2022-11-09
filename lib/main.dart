@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:jualin_flutter_3/app/core/resource/color.dart';
+import 'app/modules/buyer-interface/dashboard_buyer/dashboard_buyer_binding.dart';
 import 'app/modules/home/home_controller.dart';
 import 'app/routes/app_pages.dart';
 
 Future main() async {
+  DashboardBuyerBinding().dependencies();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp().then((value) => Get.put(HomeController()));
   runApp(

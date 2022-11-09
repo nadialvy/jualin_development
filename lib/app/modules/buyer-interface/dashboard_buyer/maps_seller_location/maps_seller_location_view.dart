@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:jualin_flutter_3/app/core/resource/color.dart';
+import 'package:jualin_flutter_3/app/helper/snackbar_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'maps_seller_location_controller.dart';
@@ -28,13 +29,8 @@ class MapsSellerLocationView extends GetView<MapsSellerLocationController> {
               color: colorBlack,
             ).onTap(() => Get.back())),
         body: Stack(
-          children: [
-            GoogleMap(initialCameraPosition: defLocation),
-            Container(
-              padding: const EdgeInsets.only(top: 24, right: 12),
-              alignment: Alignment.topRight,
-              child: VStack([]),
-            )
+          children: const <Widget>[
+            GoogleMap(initialCameraPosition: CameraPosition(target: LatLng(-7.2823185, 112.7931503), zoom: 12)),
           ],
         ));
   }

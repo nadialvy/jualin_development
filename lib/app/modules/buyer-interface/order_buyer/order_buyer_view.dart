@@ -23,7 +23,7 @@ class OrderBuyerView extends GetView<OrderBuyerController> {
         child: VStack([
           buildContainer(wallet()),
           24.heightBox,
-          'Pesanan Sekarang'.text.size(18).bold.make(),
+          'Pesanan Sekarang'.text.size(16).bold.make(),
           8.heightBox,
           buildContainer(buildCard()),
           24.heightBox,
@@ -39,26 +39,26 @@ class OrderBuyerView extends GetView<OrderBuyerController> {
 
   Widget wallet() {
     return VStack([
-      'Saldo E-Wallet'.text.color(colorBlack).bold.size(18).make(),
+      'Saldo E-Wallet'.text.color(colorBlack).bold.size(16).make(),
       16.heightBox,
       HStack([
         VStack([
-          'LinkAja'.text.color(colorBlack).semiBold.size(16).make(),
+          'LinkAja'.text.color(colorBlack).semiBold.size(14).make(),
           'Rp500'.text.color(colorNeutral).size(14).make(),
         ]).expand(),
         Chip(
-          label: '+ Isi Ulang'.text.color(colorPrimaryDark).semiBold.make(),
+          label: '+ Isi Ulang'.text.size(14).color(colorPrimaryDark).semiBold.make(),
           backgroundColor: Color(0xFFD9F3F2),
         ),
       ]),
       8.heightBox,
       HStack([
         VStack([
-          'OVO'.text.color(colorBlack).semiBold.size(16).make(),
+          'OVO'.text.color(colorBlack).semiBold.size(14).make(),
           '-'.text.color(colorNeutral).size(14).make(),
         ]).expand(),
         Chip(
-          label: '+ Hubungkan'.text.color(colorPrimaryDark).semiBold.make(),
+          label: '+ Hubungkan'.text.size(14).color(colorPrimaryDark).semiBold.make(),
           backgroundColor: Color(0xFFD9F3F2),
         ),
       ])
@@ -93,7 +93,7 @@ class OrderBuyerView extends GetView<OrderBuyerController> {
           ),
           7.widthBox,
           VStack([
-            'Mang Ujang - Seblak Setan'.text.size(16).bold.make(),
+            'Mang Ujang - Seblak Setan'.text.size(14).bold.make(),
             5.heightBox,
             'Seblak Angel, Seblak Setan Lv.1'.text.size(12).make(),
           ])
@@ -109,7 +109,7 @@ class OrderBuyerView extends GetView<OrderBuyerController> {
   Widget buildTitle(String title) {
     return HStack(
       [
-        title.text.size(18).bold.make(),
+        title.text.size(16).bold.make(),
         'Lihat semua >'.text.size(12).color(colorNeutral.shade400).make(),
       ],
       alignment: MainAxisAlignment.spaceBetween,

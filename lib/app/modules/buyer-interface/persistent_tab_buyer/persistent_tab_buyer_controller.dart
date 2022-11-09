@@ -1,6 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:get/get.dart';
+import 'package:jualin_flutter_3/app/helper/snackbar_helper.dart';
 import 'package:logger/logger.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
@@ -25,7 +26,7 @@ class PersistentTabBuyerController extends GetxController {
   final pageList = [
     const DashboardBuyerView(),
     const OrderBuyerView(),
-    ChatBuyerView(),
+    // ChatBuyerView(),
     const SettingBuyerView(),
   ];
 
@@ -33,35 +34,38 @@ class PersistentTabBuyerController extends GetxController {
 
   Future<void> onTabChange(index) async {
     if (index == MENU_DASHBOARD_BUYER && currentIndex != MENU_DASHBOARD_BUYER) {
+      logger.i('--------');
       await Get.delete<OrderBuyerController>();
-      await Get.delete<ChatBuyerController>();
       await Get.delete<SettingBuyerController>();
 
+      Get.isRegistered<DashboardBuyerController>() ? Get.find<DashboardBuyerController>() : Get.put(DashboardBuyerController());
       Get.put<DashboardBuyerController>(DashboardBuyerController());
       Get.find<DashboardBuyerController>().onReady();
 
       currentIndex = index;
     } else if (index == MENU_ORDER_BUYER && currentIndex != MENU_ORDER_BUYER) {
-      await Get.delete<DashboardBuyerController>();
-      await Get.delete<ChatBuyerController>();
+      logger.i('--------');
+      // await Get.delete<DashboardBuyerController>();
       await Get.delete<SettingBuyerController>();
 
       Get.put<OrderBuyerController>(OrderBuyerController());
       Get.find<OrderBuyerController>().onInit();
       currentIndex = index;
     } else if (index == MENU_CHAT_BUYER && currentIndex != MENU_CHAT_BUYER) {
-      await Get.delete<DashboardBuyerController>();
-      await Get.delete<OrderBuyerController>();
-      await Get.delete<SettingBuyerController>();
+      // SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;(');
+      // logger.i('--------');
+      // await Get.delete<DashboardBuyerController>();
+      // await Get.delete<OrderBuyerController>();
+      // await Get.delete<SettingBuyerController>();
 
-      Get.put<ChatBuyerController>(ChatBuyerController());
-      Get.find<ChatBuyerController>().onInit();
+      // Get.put<ChatBuyerController>(ChatBuyerController());
+      // Get.find<ChatBuyerController>().onReady();
 
-      currentIndex = index;
-    } else if (index == MENU_SETTING_BUYER && currentIndex != MENU_SETTING_BUYER) {
-      await Get.delete<DashboardBuyerController>();
+      // currentIndex = index;
+    } else {
+      logger.i('--------');
+      // await Get.delete<DashboardBuyerController>();
       await Get.delete<OrderBuyerController>();
-      await Get.delete<ChatBuyerController>();
 
       Get.put<SettingBuyerController>(SettingBuyerController());
       Get.find<SettingBuyerController>().onReady();
