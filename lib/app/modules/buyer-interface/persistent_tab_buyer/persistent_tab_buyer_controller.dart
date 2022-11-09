@@ -26,7 +26,7 @@ class PersistentTabBuyerController extends GetxController {
   final pageList = [
     const DashboardBuyerView(),
     const OrderBuyerView(),
-    // ChatBuyerView(),
+    ChatBuyerView(),
     const SettingBuyerView(),
   ];
 

@@ -22,7 +22,7 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
       body: SmartRefresher(
         enablePullUp: true,
         controller: controller.rcDashboard,
-        onRefresh: () => controller.onRefreshDashboard(),
+        // onRefresh: () => controller.onRefreshDashboard(),
         footer: CustomFooter(
           builder: (context, mode) {
             return const SizedBox.shrink();
@@ -109,16 +109,16 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
                       ),
                     ),
                     19.heightBox,
-                    buildTitle('Lapak Tersedia'),
+                    buildTitle('Lapak Tersedia').onTap(() => controller.goToAllStallList()),
                     16.heightBox,
                     HStack([
-                      buildCardLapak(),
-                      buildCardLapak(),
-                      buildCardLapak(),
-                      buildCardLapak(),
-                      buildCardLapak(),
+                      buildCardLapak('Lapak Komersil', 'Rp1.000.000/bulan', 'Jl. Pasar Minggu Kota Suka Jalan', 'assets/images/lapak_image.png'),
+                      buildCardLapak('Lapak Jualan', 'Rp750.000/bulan', 'Jl. Pasar Senen Kota Suka Kamu', 'assets/images/lapak_2.jpeg'),
+                      buildCardLapak('Disewakan Lapak', 'Rp1.000.000/bulan', 'Jl. Gunung Bromo Kencana Wangi Kota Suka Suka', 'assets/images/lapak_3.jpg'),
+                      buildCardLapak('Lapak Murah Jakarta Selatan', 'Rp500.000/bulan', 'Jl. Ahmad Yani Kota Bawah Sendiri', 'assets/images/lapak_4.jpg'),
+                      buildCardLapak('Lapak Jualan', 'Rp800.000/bulan', 'Jl. Pasar Minggu Kota Suka Jalan', 'assets/images/lapak_5.jpg'),
                     ]).scrollHorizontal(),
-                    20.heightBox
+                    // 10.heightBox
                   ],
                 ),
               ).pSymmetric(h: 16).scrollVertical();
@@ -203,7 +203,7 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
     );
   }
 
-  Widget buildCardLapak() {
+  Widget buildCardLapak(String name, String address, String price, String image) {
     return SizedBox(
       width: 160,
       height: 220,
@@ -223,15 +223,15 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
                   topLeft: Radius.circular(12),
                   topRight: Radius.circular(12),
                 ),
-                image: DecorationImage(image: AssetImage('assets/images/lapak_image.png'), fit: BoxFit.cover),
+                image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
               ),
             ),
             Expanded(
               child: VStack(
                 [
-                  'Lapak Komersil'.text.color(colorBlack).size(14).maxLines(1).ellipsis.bold.make(),
+                  name.text.color(colorBlack).size(14).maxLines(1).ellipsis.bold.make(),
                   2.heightBox,
-                  'Rp200.000/bulan'.text.color(colorPrimary).size(12).maxLines(1).ellipsis.bold.make(),
+                  address.text.color(colorPrimary).size(12).maxLines(1).ellipsis.bold.make(),
                   7.heightBox,
                   HStack(
                     [
@@ -240,7 +240,7 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
                         scale: 2.7,
                       ),
                       5.widthBox,
-                      Expanded(child: 'Jl. Danau Ranau X, Sawojajar, Malang hAHAHAH'.text.color(colorBlack).maxLines(2).size(10).ellipsis.make()),
+                      Expanded(child: price.text.color(colorBlack).maxLines(2).size(10).ellipsis.make()),
                     ],
                     alignment: MainAxisAlignment.start,
                     crossAlignment: CrossAxisAlignment.start,

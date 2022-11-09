@@ -19,10 +19,10 @@ class DashboardBuyerController extends GetxController {
 
   final rcDashboard = RefreshController();
 
-  Future<void> onRefreshDashboard() async {
-    streamUser();
-    rcDashboard.refreshCompleted();
-  }
+  // Future<void> onRefreshDashboard() async {
+  //   streamUser();
+  //   rcDashboard.refreshCompleted();
+  // }
 
   @override
   Future<void> onInit() async {
@@ -46,6 +46,8 @@ class DashboardBuyerController extends GetxController {
   void goToPitchmanList() => Get.toNamed(Routes.PITCHMAN_LIST);
 
   void goToCadgerList() => Get.toNamed(Routes.CADGER_LIST);
+
+  void goToAllStallList() => Get.toNamed(Routes.LIST_ALL_STALL_BUYER);
 
   void goToMapSellerlocation() {
     SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;(');

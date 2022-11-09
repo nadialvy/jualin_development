@@ -51,7 +51,7 @@ class PersistentTabSellerController extends GetxController {
     } else if (index == MENU_ORDER_SELLER && currentIndex != MENU_ORDER_SELLER) {
       Get.lazyPut<OrderSellerController>(() => OrderSellerController());
       Get.find<OrderSellerController>().onInit();
-      await Get.delete<DashboardSellerController>();
+      // await Get.delete<DashboardSellerController>();
       await Get.delete<ChatSellerController>();
       await Get.delete<SettingSellerController>();
 
@@ -60,7 +60,7 @@ class PersistentTabSellerController extends GetxController {
       Get.lazyPut<ChatSellerController>(() => ChatSellerController());
       Get.find<ChatSellerController>().onInit();
 
-      await Get.delete<DashboardSellerController>();
+      // await Get.delete<DashboardSellerController>();
       await Get.delete<OrderSellerController>();
       await Get.delete<SettingSellerController>();
 
@@ -69,7 +69,7 @@ class PersistentTabSellerController extends GetxController {
       Get.lazyPut<SettingSellerController>(() => SettingSellerController());
       Get.find<SettingSellerController>().onInit();
 
-      await Get.delete<DashboardSellerController>();
+      // await Get.delete<DashboardSellerController>();
       await Get.delete<OrderSellerController>();
       await Get.delete<ChatSellerController>();
 
