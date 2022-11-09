@@ -76,24 +76,24 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
                     buildTitle('Pedagang Keliling').onTap(() => controller.goToPitchmanList()),
                     12.heightBox,
                     buildContainer([
-                      buildCard(),
+                      buildCard('assets/images/profpict1.png', 'Mang Ujang - Seblak Setan', '0.1 Km dari posisi kamu'),
                       12.heightBox,
-                      buildCard(),
+                      buildCard('assets/images/ch_3.png', 'Ibu Ummi - Sayur Lontong', '0.35 Km dari posisi kamu'),
                       12.heightBox,
-                      buildCard(),
+                      buildCard('assets/images/ch_2.png', 'Pak Juned - Semir Sepatu', '0.55 Km dari posisi kamu'),
                     ]),
                     19.heightBox,
                     buildTitle('Pedagang Kaki Lima').onTap(() => controller.goToCadgerList()),
                     12.heightBox,
                     buildContainer([
-                      buildCard(),
+                      buildCard('assets/images/ch_5.png', 'Bang Jali - Semir Sepatu', '1 Km dari posisi kamu'),
                       12.heightBox,
-                      buildCard(),
+                      buildCard('assets/images/ch_8.png', 'Pak Asoy - Semir Sepatu', '1.1 Km dari posisi kamu'),
                       12.heightBox,
-                      buildCard(),
+                      buildCard('assets/images/ch_9.png', 'Mas Radit - Semir Sepatu', '2.1 Km dari posisi kamu'),
                     ]),
                     19.heightBox,
-                    buildTitle('Lokasi Pedagang Keliling'),
+                    buildTitle('Lokasi Pedagang Keliling').onTap(() => controller.goToMapSellerlocation()),
                     16.heightBox,
                     Container(
                       height: 200,
@@ -101,6 +101,10 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
                       decoration: BoxDecoration(
                         color: colorNeutral,
                         borderRadius: BorderRadius.circular(8),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/dummy_map.png'),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                     19.heightBox,
@@ -173,17 +177,17 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
     );
   }
 
-  Widget buildCard() {
+  Widget buildCard(String image, String name, String position) {
     return SizedBox(
       width: double.infinity,
       child: HStack([
         Image.asset(
-          'assets/images/profpict1.png',
+          image,
           scale: 2,
         ),
         7.widthBox,
         VStack([
-          'Mang Ujang - Seblak Setan'.text.size(14).bold.make(),
+          name.text.size(14).bold.make(),
           5.heightBox,
           HStack([
             Image.asset(
@@ -191,7 +195,7 @@ class DashboardBuyerView extends GetView<DashboardBuyerController> {
               scale: 2,
             ),
             5.widthBox,
-            '0.1 Km dari posisi kamu'.text.size(12).make(),
+            position.text.size(12).make(),
           ])
         ])
       ]),

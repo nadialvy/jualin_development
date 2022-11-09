@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:gredu_common/gredu_common.dart';
+import 'package:jualin_flutter_3/app/helper/snackbar_helper.dart';
 import 'package:jualin_flutter_3/app/modules/buyer-interface/detail_seller/detail_seller_controller.dart';
 import 'package:jualin_flutter_3/app/widgets/index.dart';
 import 'package:logger/logger.dart';
@@ -19,7 +20,7 @@ class DetailSellerView extends GetView<DetailSellerController> {
         backgroundColor: const Color.fromARGB(0, 40, 39, 39),
         elevation: 0,
         shadowColor: Colors.transparent,
-        title: '${controller.title}'.text.bold.maxLines(3).overflow(TextOverflow.ellipsis).color(colorBlack).make(),
+        title: '${controller.title}'.text.bold.maxLines(3).size(14).overflow(TextOverflow.ellipsis).color(colorBlack).make(),
         leading: const Icon(
           Icons.arrow_back,
           color: colorBlack,
@@ -30,10 +31,10 @@ class DetailSellerView extends GetView<DetailSellerController> {
             child: VStack(
           [
             SizedBox(
-              width: 400,
-              height: 400,
+              width: 300,
+              height: 300,
               child: Image.asset(
-                "assets/images/profpict1.png",
+                "assets/images/profpict_detail_1.png",
                 fit: BoxFit.fill,
               ),
             ).centered(),
@@ -41,8 +42,9 @@ class DetailSellerView extends GetView<DetailSellerController> {
             const ExButtonDefault(
               leftIcon: Icon(Icons.map_rounded),
               label: 'Lacak Lokasi Penjual',
+              labelSize: 14,
               radius: 12,
-            ).wFull(context).centered(),
+            ).wFull(context).centered().onTap(() => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;(')),
             VStack([
               'Deskripsi'.text.size(18).bold.make(),
               2.heightBox,
@@ -105,15 +107,16 @@ class DetailSellerView extends GetView<DetailSellerController> {
         [
           ExButtonOutline(
             label: 'Lihat Produk',
+            labelSize: 14,
             isLabelBold: true,
             labelColor: colorBlack,
-            onPressed: () {},
+            onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
           ).expand(),
           16.widthBox,
           ExButtonDefault(
             label: 'Panggil ke Tempat Saya',
             labelSize: 12,
-            onPressed: () {},
+            onPressed: () => SnackbarHelper.info('Oops! Fitur ini masih dalam tahap pengembangan ;('),
           ).expand(),
         ],
         alignment: MainAxisAlignment.spaceBetween,

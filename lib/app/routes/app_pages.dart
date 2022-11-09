@@ -16,6 +16,8 @@ import '../modules/buyer-interface/chat_buyer/chat_with_stall_owner/chat_with_st
 import '../modules/buyer-interface/chat_buyer/chat_with_stall_owner/chat_with_stall_owner_view.dart';
 import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_binding.dart';
 import '../modules/buyer-interface/dashboard_buyer/dashboard_buyer_view.dart';
+import '../modules/buyer-interface/dashboard_buyer/maps_seller_location/maps_seller_location_binding.dart';
+import '../modules/buyer-interface/dashboard_buyer/maps_seller_location/maps_seller_location_view.dart';
 import '../modules/buyer-interface/dashboard_buyer/notif_dashboard/notif_dashboard_binding.dart';
 import '../modules/buyer-interface/dashboard_buyer/notif_dashboard/notif_dashboard_view.dart';
 import '../modules/buyer-interface/detail_seller/detail_seller_binding.dart';
@@ -139,6 +141,11 @@ class AppPages {
           name: _Paths.NOTIF_DASHBOARD,
           page: () => NotifDashboardView(),
           binding: NotifDashboardBinding(),
+        ),
+        GetPage(
+          name: _Paths.MAPS_SELLER_LOCATION,
+          page: () => MapsSellerLocationView(),
+          binding: MapsSellerLocationBinding(),
         ),
       ],
     ),
