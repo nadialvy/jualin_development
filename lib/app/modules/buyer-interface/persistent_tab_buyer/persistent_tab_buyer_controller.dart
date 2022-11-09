@@ -1,11 +1,9 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:get/get.dart';
-import 'package:jualin_flutter_3/app/helper/snackbar_helper.dart';
 import 'package:logger/logger.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-import '../chat_buyer/chat_buyer_controller.dart';
 import '../chat_buyer/chat_buyer_view.dart';
 import '../dashboard_buyer/dashboard_buyer_controller.dart';
 import '../dashboard_buyer/dashboard_buyer_view.dart';

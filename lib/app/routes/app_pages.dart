@@ -50,6 +50,8 @@ import '../modules/seller-interface/chat_seller/chat_with_stall_owner_on_seller/
 import '../modules/seller-interface/chat_seller/chat_with_stall_owner_on_seller/chat_with_stall_owner_on_seller_view.dart';
 import '../modules/seller-interface/dashboard_seller/dashboard_seller_binding.dart';
 import '../modules/seller-interface/dashboard_seller/dashboard_seller_view.dart';
+import '../modules/seller-interface/dashboard_seller/list_all_stall_seller/list_all_stall_seller_binding.dart';
+import '../modules/seller-interface/dashboard_seller/list_all_stall_seller/list_all_stall_seller_view.dart';
 import '../modules/seller-interface/dashboard_seller/notif_dashboard_seller/notif_dashboard_seller_binding.dart';
 import '../modules/seller-interface/dashboard_seller/notif_dashboard_seller/notif_dashboard_seller_view.dart';
 import '../modules/seller-interface/help_seller/help_seller_binding.dart';
@@ -180,6 +182,11 @@ class AppPages {
           name: _Paths.NOTIF_DASHBOARD_SELLER,
           page: () => NotifDashboardSellerView(),
           binding: NotifDashboardSellerBinding(),
+        ),
+        GetPage(
+          name: _Paths.LIST_ALL_STALL_SELLER,
+          page: () => ListAllStallSellerView(),
+          binding: ListAllStallSellerBinding(),
         ),
       ],
     ),
