@@ -71,7 +71,7 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
                     10.heightBox,
                     buildSearchBox(),
                     19.heightBox,
-                    buildTitle('Daftar Panggilan'),
+                    buildTitle('Daftar Panggilan').onTap(() => controller.goToCallList()),
                     12.heightBox,
                     buildContainer([
                       buildCard('assets/images/profpict1.png', 'Rando', '2 mnt', '0.35 Km dari posisi kamu'),
@@ -81,7 +81,7 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
                       buildCard('assets/images/ch_3.png', 'Meisya', '14 mnt', '2.1 Km dari posisi kamu'),
                     ]),
                     19.heightBox,
-                    buildTitle('Pesanan'),
+                    buildTitle('Pesanan').onTap(() => controller.goToOrderList()),
                     12.heightBox,
                     buildContainer([
                       buildCard('assets/images/ch_4.png', 'Ifa', '2 mnt', '0.1 Km dari posisi kamu'),
@@ -103,6 +103,10 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
                       decoration: BoxDecoration(
                         color: colorNeutral,
                         borderRadius: BorderRadius.circular(8),
+                        image: const DecorationImage(
+                          image: AssetImage('assets/images/dummy_map.png'),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                     19.heightBox,

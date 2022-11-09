@@ -55,6 +55,8 @@ abstract class Routes {
   static const LIST_ALL_STALL_SELLER =
       _Paths.DASHBOARD_SELLER +
       _Paths.LIST_ALL_STALL_SELLER;
+  static const ORDER_LIST = _Paths.ORDER_LIST;
+  static const CALL_LIST =  _Paths.CALL_LIST;
 }
 
 abstract class _Paths {
@@ -96,4 +98,6 @@ abstract class _Paths {
   static const NOTIF_DASHBOARD_SELLER = '/notif-dashboard-seller';
   static const LIST_ALL_STALL_BUYER = '/list-all-stall-buyer';
   static const LIST_ALL_STALL_SELLER = '/list-all-stall-seller';
+  static const ORDER_LIST = '/order-list';
+  static const CALL_LIST = '/call-list';
 }
