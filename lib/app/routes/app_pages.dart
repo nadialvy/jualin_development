@@ -42,6 +42,8 @@ import '../modules/home/home_binding.dart';
 import '../modules/home/home_view.dart';
 import '../modules/media_preview/image_preview/image_preview_binding.dart';
 import '../modules/media_preview/image_preview/image_preview_view.dart';
+import '../modules/seller-interface/call_list/call_list_binding.dart';
+import '../modules/seller-interface/call_list/call_list_view.dart';
 import '../modules/seller-interface/chat_seller/chat_seller_binding.dart';
 import '../modules/seller-interface/chat_seller/chat_seller_view.dart';
 import '../modules/seller-interface/chat_seller/chat_with_buyer/chat_with_buyer_binding.dart';
@@ -58,6 +60,8 @@ import '../modules/seller-interface/help_seller/help_seller_binding.dart';
 import '../modules/seller-interface/help_seller/help_seller_view.dart';
 import '../modules/seller-interface/notification_seller/notification_seller_binding.dart';
 import '../modules/seller-interface/notification_seller/notification_seller_view.dart';
+import '../modules/seller-interface/order_list/order_list_binding.dart';
+import '../modules/seller-interface/order_list/order_list_view.dart';
 import '../modules/seller-interface/order_seller/order_seller_binding.dart';
 import '../modules/seller-interface/order_seller/order_seller_view.dart';
 import '../modules/seller-interface/persistent_tab_seller/persistent_tab_seller_binding.dart';
@@ -251,6 +255,16 @@ class AppPages {
       name: _Paths.CADGER_LIST,
       page: () => const CadgerListView(),
       binding: CadgerListBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER_LIST,
+      page: () => const OrderListView(),
+      binding: OrderListBinding(),
+    ),
+    GetPage(
+      name: _Paths.CALL_LIST,
+      page: () => const CallListView(),
+      binding: CallListBinding(),
     ),
   ];
 }

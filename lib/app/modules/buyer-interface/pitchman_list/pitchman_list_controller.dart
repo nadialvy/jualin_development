@@ -112,6 +112,8 @@ class PitchmanListController extends GetxController {
           )
           .toList();
       listSeller.value = listSeller.where((p0) => p0.isMoving == true).toList();
+
+      logger.i(sellers);
       return listSeller;
     });
   }

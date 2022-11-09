@@ -68,6 +68,7 @@ dependencies:
   logger: ^1.1.0
   geocoding: ^2.0.5
   google_maps_flutter: ^2.2.1
+  faker: ^2.0.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
