@@ -34,6 +34,8 @@ class DashboardSellerController extends GetxController {
     Get.toNamed(Routes.PROFILE_SELLER);
   }
 
+  void goToAllStall() => Get.toNamed(Routes.LIST_ALL_STALL_SELLER);
+
   void goToNotifPage() {
 
     logger.i('go to notifs');

@@ -19,7 +19,7 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
       body: SmartRefresher(
         enablePullUp: true,
         controller: controller.rcDashboard,
-        onRefresh: () => controller.onRefreshDashboard(),
+        // onRefresh: () => controller.onRefreshDashboard(),
         footer: CustomFooter(
           builder: (context, mode) {
             return const SizedBox.shrink();
@@ -74,21 +74,25 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
                     buildTitle('Daftar Panggilan'),
                     12.heightBox,
                     buildContainer([
-                      buildCard(),
+                      buildCard('assets/images/profpict1.png', 'Rando', '2 mnt', '0.35 Km dari posisi kamu'),
                       12.heightBox,
-                      buildCard(),
+                      buildCard('assets/images/ch_2.png', 'Nero', '9 mnt', '1 Km dari posisi kamu'),
                       12.heightBox,
-                      buildCard(),
+                      buildCard('assets/images/ch_3.png', 'Meisya', '14 mnt', '2.1 Km dari posisi kamu'),
                     ]),
                     19.heightBox,
                     buildTitle('Pesanan'),
                     12.heightBox,
                     buildContainer([
-                      buildCard(),
+                      buildCard('assets/images/ch_4.png', 'Ifa', '2 mnt', '0.1 Km dari posisi kamu'),
                       12.heightBox,
-                      buildCard(),
+                      buildCard('assets/images/ch_5.png', 'Ricco', '6 mnt', '0.6 Km dari posisi kamu'),
                       12.heightBox,
-                      buildCard(),
+                      buildCard('assets/images/ch_6.png', 'Nando', '10 mnt', '1 Km dari posisi kamu'),
+                      12.heightBox,
+                      // buildCard(),
+                      // 12.heightBox,
+                      // buildCard(),
                     ]),
                     19.heightBox,
                     buildTitle('Lokasi Pembeli Sekitar'),
@@ -102,16 +106,15 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
                       ),
                     ),
                     19.heightBox,
-                    buildTitle('Lapak Tersedia'),
+                    buildTitle('Lapak Tersedia').onTap(() => controller.goToAllStall()),
                     16.heightBox,
                     HStack([
-                      buildCardLapak(),
-                      buildCardLapak(),
-                      buildCardLapak(),
-                      buildCardLapak(),
-                      buildCardLapak(),
+                      buildCardLapak('Lapak Komersil', 'Rp1.000.000/bulan', 'Jl. Pasar Minggu Kota Suka Jalan', 'assets/images/lapak_image.png'),
+                      buildCardLapak('Lapak Jualan', 'Rp750.000/bulan', 'Jl. Pasar Senen Kota Suka Kamu', 'assets/images/lapak_2.jpeg'),
+                      buildCardLapak('Disewakan Lapak', 'Rp1.000.000/bulan', 'Jl. Gunung Bromo Kencana Wangi Kota Suka Suka', 'assets/images/lapak_3.jpg'),
+                      buildCardLapak('Lapak Murah Jakarta Selatan', 'Rp500.000/bulan', 'Jl. Ahmad Yani Kota Bawah Sendiri', 'assets/images/lapak_4.jpg'),
+                      buildCardLapak('Lapak Jualan', 'Rp800.000/bulan', 'Jl. Pasar Minggu Kota Suka Jalan', 'assets/images/lapak_5.jpg'),
                     ]).scrollHorizontal(),
-                    20.heightBox
                   ],
                 ),
               ).pSymmetric(h: 16).scrollVertical();
@@ -164,21 +167,21 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
     );
   }
 
-  Widget buildCard() {
+  Widget buildCard(String image, String name, String time, String position) {
     return SizedBox(
       width: double.infinity,
       child: HStack([
         Image.asset(
-          'assets/images/profpict1.png',
+          image,
           scale: 2,
         ),
         7.widthBox,
         Expanded(
           child: VStack([
             HStack([
-              'Nadia Anjay'.text.size(14).bold.make(),
+              name.text.size(14).bold.make(),
               const Spacer(),
-              '2 mnt'.text.size(12).bold.make(),
+              time.text.size(12).bold.make(),
             ]),
             5.heightBox,
             HStack([
@@ -187,7 +190,7 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
                 scale: 2,
               ),
               5.widthBox,
-              '0.1 Km dari posisi kamu'.text.size(12).make(),
+              position.text.size(12).make(),
             ])
           ]),
         )
@@ -195,7 +198,7 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
     );
   }
 
-  Widget buildCardLapak() {
+  Widget buildCardLapak(String name, String address, String price, String image) {
     return SizedBox(
       width: 160,
       height: 220,
@@ -210,20 +213,20 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
           children: [
             Container(
               height: 120,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(12),
                   topRight: Radius.circular(12),
                 ),
-                image: DecorationImage(image: AssetImage('assets/images/lapak_image.png'), fit: BoxFit.cover),
+                image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
               ),
             ),
             Expanded(
               child: VStack(
                 [
-                  'Lapak Komersil'.text.color(colorBlack).size(14).maxLines(1).ellipsis.bold.make(),
+                  name.text.color(colorBlack).size(14).maxLines(1).ellipsis.bold.make(),
                   2.heightBox,
-                  'Rp200.000/bulan'.text.color(colorPrimary).size(12).maxLines(1).ellipsis.bold.make(),
+                  address.text.color(colorPrimary).size(12).maxLines(1).ellipsis.bold.make(),
                   7.heightBox,
                   HStack(
                     [
@@ -232,7 +235,7 @@ class DashboardSellerView extends GetView<DashboardSellerController> {
                         scale: 2.7,
                       ),
                       5.widthBox,
-                      Expanded(child: 'Jl. Danau Ranau X, Sawojajar, Malang hAHAHAH'.text.color(colorBlack).maxLines(2).size(10).ellipsis.make()),
+                      Expanded(child: price.text.color(colorBlack).maxLines(2).size(10).ellipsis.make()),
                     ],
                     alignment: MainAxisAlignment.start,
                     crossAlignment: CrossAxisAlignment.start,

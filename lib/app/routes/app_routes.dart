@@ -33,8 +33,7 @@ abstract class Routes {
   static const MAPS_SELLER_LOCATION =
       _Paths.DASHBOARD_BUYER + _Paths.MAPS_SELLER_LOCATION;
   static const LIST_ALL_STALL_BUYER =
-      _Paths.DASHBOARD_BUYER +
-      _Paths.LIST_ALL_STALL_BUYER;
+      _Paths.DASHBOARD_BUYER + _Paths.LIST_ALL_STALL_BUYER;
 
   ///SELLER SECTION
   static const DASHBOARD_SELLER = _Paths.DASHBOARD_SELLER;
@@ -53,6 +52,9 @@ abstract class Routes {
       _Paths.CHAT_SELLER + _Paths.CHAT_WITH_STALL_OWNER_ON_SELLER;
   static const NOTIF_DASHBOARD_SELLER =
       _Paths.DASHBOARD_SELLER + _Paths.NOTIF_DASHBOARD_SELLER;
+  static const LIST_ALL_STALL_SELLER =
+      _Paths.DASHBOARD_SELLER +
+      _Paths.LIST_ALL_STALL_SELLER;
 }
 
 abstract class _Paths {
@@ -93,4 +95,5 @@ abstract class _Paths {
       '/chat-with-stall-owner-on-seller';
   static const NOTIF_DASHBOARD_SELLER = '/notif-dashboard-seller';
   static const LIST_ALL_STALL_BUYER = '/list-all-stall-buyer';
+  static const LIST_ALL_STALL_SELLER = '/list-all-stall-seller';
 }

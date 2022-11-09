@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:jualin_flutter_3/app/core/resource/color.dart';
-import 'package:jualin_flutter_3/app/helper/snackbar_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'maps_seller_location_controller.dart';

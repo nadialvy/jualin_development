@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:gredu_common/gredu_common.dart';
-import 'package:jualin_flutter_3/app/helper/snackbar_helper.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../core/resource/color.dart';
