@@ -15,10 +15,15 @@ class HelpBuyerView extends GetView<HelpBuyerController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: 'Bantuan'.text.bold.make(),
+        title: 'Bantuan'.text.color(colorBlack).bold.make(),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        centerTitle: true,
+        leading: Icon(
+          Icons.arrow_back,
+          color: colorBlack,
+        ).onTap(
+          () => Get.back(),
+        ),
       ),
       body: VStack(
         [

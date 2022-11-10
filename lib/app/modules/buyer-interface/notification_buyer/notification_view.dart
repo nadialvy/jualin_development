@@ -14,26 +14,33 @@ class NotificationBuyerView extends GetView<NotificationBuyerController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: 'Notifikasi'.text.bold.make(),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+          title: 'Notifikasi'.text.color(colorBlack).bold.make(),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: const Icon(
+            Icons.arrow_back,
+            color: colorBlack,
+          ).onTap(() => Get.back())),
+      body: HStack(
+        [
+          'Aktifkan notifikasi'.text.make(),
+          Obx(
+            () => FlutterSwitch(
+              height: 20.0,
+              width: 36.0,
+              padding: 2.0,
+              toggleSize: 16.0,
+              borderRadius: 12.0,
+              activeColor: colorPrimary,
+              inactiveColor: colorNeutral.shade100,
+              value: controller.isActivateNotification.value,
+              onToggle: (currentVal) => controller.isActivateNotification.value = currentVal,
+            ),
+          )
+        ],
+        alignment: MainAxisAlignment.start,
+        crossAlignment: CrossAxisAlignment.start,
       ),
-      body: HStack([
-        'Aktifkan notifikasi'.text.make(),
-        Obx(
-          () => FlutterSwitch(
-            height: 20.0,
-            width: 36.0,
-            padding: 2.0,
-            toggleSize: 16.0,
-            borderRadius: 12.0,
-            activeColor: colorPrimary,
-            inactiveColor: colorNeutral.shade100,
-            value: controller.isActivateNotification.value,
-            onToggle: (currentVal) => controller.isActivateNotification.value = currentVal,
-          ),
-        )
-      ]),
     );
   }
 }
