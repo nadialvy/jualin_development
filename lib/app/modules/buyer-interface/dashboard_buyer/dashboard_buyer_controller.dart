@@ -77,7 +77,9 @@ class DashboardBuyerController extends GetxController {
       SnackbarHelper.danger("Perizinan lokasi ditolak secara permanen, kami tidak bisa mengirim perizinan lokasi");
       return Future.error('Location permissions are permanently denied, we cannot request permissions.');
     }
-    return await Geolocator.getCurrentPosition();
+    return await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
+    );
   }
 
   Future<void> updatePosition(Position position, String address) async {
